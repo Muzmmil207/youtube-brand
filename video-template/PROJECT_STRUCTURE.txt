@@ -1,0 +1,11 @@
+video-template/
+├── BRAND_GUIDELINES.md                  # Channel design specification (Signal Editorial)
+├── frame.md                             # Authoritative frame specification
+├── PROJECT_STRUCTURE.txt                # This architecture map
+├── transcript.srt                       # Source Voceover transcript with timestamps
+├── index.html                           # Root master composition (54.0s @ 1080x1920)
+├── styles/
+│   └── signal-editorial.css             # Shared Signal Editorial design tokens & layout rules
+└── compositions/
+  
+  

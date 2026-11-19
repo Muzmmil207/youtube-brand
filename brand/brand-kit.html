@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Learn Shopify Today — Brand kit</title>
+<link rel="stylesheet" href="brand.css">
+<style>
+  body { overflow: auto; line-height: 1.5; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 72px 40px 140px; }
+
+  header { display: flex; align-items: center; gap: 22px; padding-bottom: 48px; border-bottom: 1px solid var(--line); }
+  .logo-mark {
+    width: 72px; height: 72px; border-radius: 20px; display: grid; place-items: center;
+    background: linear-gradient(180deg, #1D2A15, #12160F);
+    border: 1px solid rgba(149, 191, 71, 0.35);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 50px -12px rgba(149,191,71,.4);
+  }
+  .logo-mark svg { width: 38px; height: 38px; }
+  header h1 { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; }
+  header p { color: var(--dim); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: 0; }
+  h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lime); margin-bottom: 26px; }
+  h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+  p, li { color: var(--muted); font-size: 15px; }
+  p + p { margin-top: 10px; }
+  ul { padding-left: 18px; }
+  li + li { margin-top: 6px; }
+
+  .lockup-demo {
+    border-radius: 24px; border: 1px solid var(--line);
+    background: radial-gradient(ellipse 60% 90% at 70% 40%, rgba(149,191,71,.10), transparent 70%), #0B0C0D;
+    padding: 64px 48px; text-align: center; position: relative; overflow: hidden;
+  }
+  .lockup-demo .row { display: flex; align-items: center; justify-content: center; gap: 18px; }
+  .lockup-demo .row .logo-mark { width: 56px; height: 56px; border-radius: 16px; }
+  .lockup-demo .row .logo-mark svg { width: 28px; height: 28px; }
+  .lockup-demo .wm { font-size: 40px; font-weight: 600; letter-spacing: -0.04em; }
+  .lockup-demo .wm b { color: var(--lime); font-weight: 600; }
+  .lockup-demo .tg { margin-top: 14px; color: var(--muted); font-size: 16px; }
+
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+
+  .sw { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+  .sw .fill { height: 92px; }
+  .sw .meta { padding: 14px 16px; background: var(--surface); }
+  .sw .name { font-size: 14px; font-weight: 600; }
+  .sw .hex { font-family: ui-monospace, Consolas, monospace; font-size: 12px; color: var(--dim); margin-top: 2px; }
+  .sw .use { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  .spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .spec-row:last-child { border-bottom: 0; }
+  .spec-row span:first-child { color: var(--muted); }
+  .spec-row span:last-child { font-family: ui-monospace, Consolas, monospace; font-size: 13px; }
+
+  .type-demo { border-top: 1px solid var(--line); padding: 18px 0; display: flex; align-items: baseline; gap: 24px; }
+  .type-demo .label { width: 150px; flex: none; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+  .t-display { font-size: 44px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+  .t-h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+  .t-body { font-size: 15px; color: var(--muted); }
+  .t-label { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--lime-soft); }
+
+  .do, .dont { border-radius: 16px; padding: 20px 22px; border: 1px solid var(--line); background: var(--surface); }
+  .do { border-color: rgba(149,191,71,.25); }
+  .dont { border-color: rgba(255,255,255,.10); }
+  .do h4, .dont h4 { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 12px; }
+  .do h4 { color: var(--lime); }
+  .dont h4 { color: var(--dim); }
+  .do li, .dont li { font-size: 14px; }
+
+  .banner-diagram { position: relative; width: 100%; aspect-ratio: 2560/1440; border-radius: 14px; border: 1px solid var(--line); background: #0B0C0D; overflow: hidden; }
+  .banner-diagram .safe { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 60.4%; height: 29.4%; border: 1px dashed rgba(149,191,71,.6); display: grid; place-items: center; }
+  .banner-diagram .safe span { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(149,191,71,.85); }
+  .banner-diagram .note { position: absolute; right: 12px; bottom: 10px; font-size: 11px; color: var(--dim); font-family: ui-monospace, Consolas, monospace; }
+
+  .files { display: flex; flex-wrap: wrap; gap: 10px; }
+  .file { font-family: ui-monospace, Consolas, monospace; font-size: 13px; color: var(--muted); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; background: var(--surface); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#95BF47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.2 8h15.6l-1.5 11.4a1.6 1.6 0 0 1-1.6 1.4H7.3a1.6 1.6 0 0 1-1.6-1.4L4.2 8Z"/><path d="M8.4 8V6.6a3.6 3.6 0 0 1 7.2 0V8"/>
+      </svg>
+    </div>
+    <div>
+      <h1>Learn Shopify Today</h1>
+      <p>Brand kit · v1</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Logo</h2>
+    <div class="lockup-demo">
+      <div class="row">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#95BF47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.2 8h15.6l-1.5 11.4a1.6 1.6 0 0 1-1.6 1.4H7.3a1.6 1.6 0 0 1-1.6-1.4L4.2 8Z"/><path d="M8.4 8V6.6a3.6 3.6 0 0 1 7.2 0V8"/>
+          </svg>
+        </div>
+        <div class="wm">Learn Shopify <b>Today</b></div>
+      </div>
+      <div class="tg">Build, customize and grow your Shopify store.</div>
+    </div>
+    <div class="grid-3" style="margin-top:18px">
+      <div class="card">
+        <h3>Clear space</h3>
+        <p>Keep the height of the bag mark free on all sides. Nothing sits closer.</p>
+      </div>
+      <div class="card">
+        <h3>Minimum size</h3>
+        <p>Mark alone from 24px. Full lockup from 120px wide — below that, drop the tagline.</p>
+      </div>
+      <div class="card">
+        <h3>Colour</h3>
+        <p>Mark is lime on near-black, or white on light. Never two colours, never a gradient fill.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Colour</h2>
+    <div class="grid-4">
+      <div class="sw"><div class="fill" style="background:#08090A;border-bottom:1px solid rgba(255,255,255,.07)"></div><div class="meta"><div class="name">Ink</div><div class="hex">#08090A</div><div class="use">All backgrounds</div></div></div>
+      <div class="sw"><div class="fill" style="background:#0F1113"></div><div class="meta"><div class="name">Surface</div><div class="hex">#0F1113</div><div class="use">Cards, panels</div></div></div>
+      <div class="sw"><div class="fill" style="background:#F4F5F6"></div><div class="meta"><div class="name">Paper</div><div class="hex">#F4F5F6</div><div class="use">Headlines</div></div></div>
+      <div class="sw"><div class="fill" style="background:#8B9198"></div><div class="meta"><div class="name">Muted</div><div class="hex">#8B9198</div><div class="use">Body copy</div></div></div>
+    </div>
+    <div class="grid-4" style="margin-top:18px">
+      <div class="sw"><div class="fill" style="background:#95BF47"></div><div class="meta"><div class="name">Lime</div><div class="hex">#95BF47</div><div class="use">Accent only</div></div></div>
+      <div class="sw"><div class="fill" style="background:#BBDD82"></div><div class="meta"><div class="name">Lime soft</div><div class="hex">#BBDD82</div><div class="use">Labels on dark</div></div></div>
+      <div class="sw"><div class="fill" style="background:#4E7A33"></div><div class="meta"><div class="name">Lime deep</div><div class="hex">#4E7A33</div><div class="use">Pressed, borders</div></div></div>
+      <div class="sw"><div class="fill" style="background:radial-gradient(circle at 50% 50%, rgba(149,191,71,.45), transparent 70%)"></div><div class="meta"><div class="name">Glow</div><div class="hex">lime @ 16%</div><div class="use">Ambient light</div></div></div>
+    </div>
+    <p style="margin-top:18px;max-width:620px">One accent. Lime earns its place by marking the one thing you want the eye to hit — a word in the headline, the mark, a button. Everything else is white, grey, or black.</p>
+  </section>
+
+  <section>
+    <h2>Type</h2>
+    <div class="type-demo"><div class="label">Display</div><div class="t-display">Any theme. Zero code.</div></div>
+    <div class="type-demo"><div class="label">Heading</div><div class="t-h2">Customize a theme in five minutes</div></div>
+    <div class="type-demo"><div class="label">Body</div><div class="t-body">Plain steps, real screens, no jargon. If a merchant can't follow it, it gets cut.</div></div>
+    <div class="type-demo"><div class="label">Label</div><div class="t-label">Themes &amp; Design</div></div>
+    <p style="margin-top:22px">Segoe UI Variable, or any neo-grotesque (Inter, Geist, SF). Tight tracking on large sizes: −0.04em at display, −0.01em at body. Never lighter than 400.</p>
+  </section>
+
+  <section>
+    <h2>Elements</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Card</h3>
+        <p style="margin-bottom:16px">Radius 18–24px, 1px white @ 7%, inner top highlight, long soft shadow.</p>
+        <div class="chip" style="height:80px"></div>
+      </div>
+      <div class="card">
+        <h3>Pill</h3>
+        <p style="margin-bottom:16px">Category tags. Lime text on lime @ 8%, 1px lime @ 25%.</p>
+        <div class="pill" style="font-size:12px;padding:8px 16px">Themes &amp; Design</div>
+      </div>
+      <div class="card">
+        <h3>Node</h3>
+        <p style="margin-bottom:16px">Thin 1px connector lines, one glowing lime dot. Never more than two per frame.</p>
+        <svg width="100%" height="52" viewBox="0 0 240 52" fill="none" preserveAspectRatio="none">
+          <path d="M0 40 C 60 40, 70 12, 120 12 S 190 34, 240 30" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+          <circle cx="120" cy="12" r="14" fill="rgba(149,191,71,.12)"/><circle cx="120" cy="12" r="4" fill="#BBDD82"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Channel banner</h2>
+    <div class="grid-2" style="align-items:start">
+      <div>
+        <div class="banner-diagram">
+          <div class="safe"><span>Safe area 1546 × 423</span></div>
+          <div class="note">2560 × 1440</div>
+        </div>
+      </div>
+      <div>
+        <div class="spec-row"><span>Canvas</span><span>2560 × 1440 px</span></div>
+        <div class="spec-row"><span>Safe area (TV + mobile)</span><span>1546 × 423 px</span></div>
+        <div class="spec-row"><span>Max file size</span><span>6 MB</span></div>
+        <div class="spec-row"><span>Formats</span><span>PNG / JPG</span></div>
+        <p style="margin-top:18px">Type lives only inside the safe area — YouTube crops everything else on phones. The outer band is for texture: dot grid, one lime glow, one connector line. Nothing you need to read.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Thumbnails</h2>
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:20px;margin-bottom:12px">The formula</h3>
+        <p><strong style="color:var(--text)">[Outcome] + [Friction removed]</strong></p>
+        <p>“Any theme. Zero code.” · “Sell more. Same traffic.” · “Faster checkout. One app.”</p>
+        <ul style="margin-top:16px">
+          <li>Two lines, two to three words each. Never a sentence.</li>
+          <li>One word in lime — the one that carries the promise.</li>
+          <li>Headline 90–110px on the 1280 × 720 canvas.</li>
+          <li>Category pill top-left, episode tag top-right, wordmark bottom-left.</li>
+          <li>Keep the bottom-right corner clear — YouTube puts the duration there.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="spec-row"><span>Canvas</span><span>1280 × 720 px</span></div>
+        <div class="spec-row"><span>Min headline size</span><span>90 px</span></div>
+        <div class="spec-row"><span>Max file size</span><span>2 MB</span></div>
+        <div class="spec-row"><span>Text safe margin</span><span>58 px</span></div>
+        <div class="spec-row"><span>Right-hand visual</span><span>1 mock UI panel</span></div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top:18px">
+      <div class="do">
+        <h4>Do</h4>
+        <ul>
+          <li>Same layout every episode — recognition beats novelty.</li>
+          <li>Show the actual screen you'll teach on, abstracted to bars.</li>
+          <li>Check it at 168px wide before you publish.</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>Red arrows, shocked faces, yellow circles.</li>
+          <li>More than one accent colour.</li>
+          <li>Text under 24px or over 4 words per line.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Voice</h2>
+    <div class="grid-3">
+      <div class="card"><h3>Plain</h3><p>Name the click, not the concept. “Products → Add product”, not “catalogue management”.</p></div>
+      <div class="card"><h3>Practical</h3><p>Every video ends with the store in a better state than it started.</p></div>
+      <div class="card"><h3>Unhyped</h3><p>No “insane”, no “secret”. A merchant's time is the thing you're protecting.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Files</h2>
+    <div class="files">
+      <div class="file">brand.css</div>
+      <div class="file">banner.html → banner-2560x1440.png</div>
+      <div class="file">thumbnail.html → thumbnail-1280x720.png</div>
+      <div class="file">avatar.html → avatar-800x800.png</div>
+    </div>
+    <p style="margin-top:16px">Edit the HTML, re-render with Chrome headless. Sizes are fixed in CSS, so the export is always exact.</p>
+  </section>
+
+</div>
+</body>
+</html>

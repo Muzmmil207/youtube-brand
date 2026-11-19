@@ -1,0 +1,67 @@
+/* Learn Shopify Today — brand tokens
+   Dark, near-black surfaces. Thin 1px borders. One accent: Shopify lime.
+   Everything else is white at low opacity. */
+:root {
+  --bg: #08090A;
+  --surface: #0F1113;
+  --surface-2: #15181B;
+  --line: rgba(255, 255, 255, 0.07);
+  --line-2: rgba(255, 255, 255, 0.13);
+  --text: #F4F5F6;
+  --muted: #8B9198;
+  --dim: #585F66;
+  --lime: #95BF47;
+  --lime-soft: #BBDD82;
+  --lime-deep: #4E7A33;
+  --glow: rgba(149, 191, 71, 0.16);
+  --font: "Segoe UI Variable Display", "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* Ambient texture layers — keep opacity low, this is the whole look */
+.dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 10%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 10%, transparent 75%);
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.glow.lime { background: radial-gradient(circle, var(--glow), transparent 62%); }
+.glow.cool { background: radial-gradient(circle, rgba(92, 124, 255, 0.07), transparent 62%); }
+
+/* Card / chip surface */
+.chip {
+  background: linear-gradient(180deg, #1A1D20, #111315);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 24px 48px -24px #000;
+}
+
+/* Small uppercase label */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(149, 191, 71, 0.25);
+  background: rgba(149, 191, 71, 0.08);
+  color: var(--lime-soft);
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}

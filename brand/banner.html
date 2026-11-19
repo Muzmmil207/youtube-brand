@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Learn Shopify Today — Channel banner 2560×1440</title>
+<link rel="stylesheet" href="brand.css">
+<style>
+  /* YouTube banner: 2560×1440 canvas, safe area 1546×423 dead centre.
+     All type lives inside the safe area; texture fills the rest. */
+  html, body { width: 2560px; height: 1440px; }
+
+  .glow-a { width: 1500px; height: 1500px; right: -120px; top: -180px; }
+  .glow-b { width: 1200px; height: 1200px; left: -220px; bottom: -300px; }
+
+  .net { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  .corner-chip {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 132px; height: 132px;
+    border-radius: 30px;
+    opacity: 0.5;
+  }
+  .corner-chip svg { width: 56px; height: 56px; }
+
+  /* Safe area 1546 × 423, centred */
+  .safe {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1546px; height: 423px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+  }
+
+  .lockup { display: flex; align-items: center; gap: 30px; }
+
+  .mark {
+    width: 104px; height: 104px;
+    border-radius: 28px;
+    display: grid; place-items: center;
+    background: linear-gradient(180deg, #1D2A15, #12160F);
+    border: 1px solid rgba(149, 191, 71, 0.35);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0 60px -10px rgba(149, 191, 71, 0.35);
+  }
+  .mark svg { width: 52px; height: 52px; }
+
+  .wordmark {
+    font-size: 96px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .wordmark b { color: var(--lime); font-weight: 650; }
+
+  .tagline {
+    margin-top: 34px;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--muted);
+  }
+
+  /* Guides toggle: append ?guides to the URL */
+  .guides { display: none; }
+  body.guides .guides { display: block; }
+  .safe-box {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 1546px; height: 423px;
+    transform: translate(-50%, -50%);
+    border: 2px dashed rgba(149, 191, 71, 0.6);
+  }
+  .safe-box span {
+    position: absolute; left: 14px; top: -34px;
+    font-size: 24px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(149, 191, 71, 0.8);
+  }
+</style>
+</head>
+<body>
+
+  <div class="dots"></div>
+  <div class="glow lime glow-a"></div>
+  <div class="glow cool glow-b"></div>
+
+  <!-- thin connector lines + glowing nodes, top-right & bottom-left -->
+  <svg class="net" viewBox="0 0 2560 1440" fill="none" aria-hidden="true">
+    <path d="M1660 300 C 1830 340, 1930 430, 2100 425 S 2340 350, 2510 320"
+          stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+    <circle cx="2100" cy="425" r="34" fill="rgba(149,191,71,0.10)"/>
+    <circle cx="2100" cy="425" r="9" fill="#BBDD82"/>
+    <circle cx="2100" cy="425" r="9" fill="#BBDD82" opacity="0.5">
+      <animate attributeName="r" values="9;18;9" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <path d="M840 1190 C 700 1140, 640 1040, 500 1030 S 300 1090, 150 1150"
+          stroke="rgba(255,255,255,0.13)" stroke-width="2"/>
+    <circle cx="500" cy="1030" r="26" fill="rgba(149,191,71,0.08)"/>
+    <circle cx="500" cy="1030" r="8" fill="#95BF47"/>
+  </svg>
+
+  <div class="corner-chip chip" style="left:150px; top:170px; transform:rotate(-6deg)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#95BF47" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.2 8h15.6l-1.5 11.4a1.6 1.6 0 0 1-1.6 1.4H7.3a1.6 1.6 0 0 1-1.6-1.4L4.2 8Z"/><path d="M8.4 8V6.6a3.6 3.6 0 0 1 7.2 0V8"/>
+    </svg>
+  </div>
+  <div class="corner-chip chip" style="right:190px; bottom:200px; transform:rotate(5deg)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 17l5-6 4 3 4-6 5 5"/><path d="M3 21h18"/>
+    </svg>
+  </div>
+
+  <div class="safe">
+    <div class="lockup">
+      <div class="mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#95BF47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.2 8h15.6l-1.5 11.4a1.6 1.6 0 0 1-1.6 1.4H7.3a1.6 1.6 0 0 1-1.6-1.4L4.2 8Z"/>
+          <path d="M8.4 8V6.6a3.6 3.6 0 0 1 7.2 0V8"/>
+        </svg>
+      </div>
+      <div class="wordmark">Learn Shopify <b>Today</b></div>
+    </div>
+    <div class="tagline">Build, customize and grow your Shopify store.</div>
+  </div>
+
+  <div class="guides">
+    <div class="safe-box"><span>safe area · 1546 × 423</span></div>
+  </div>
+
+  <script>
+    if (location.search.includes('guides')) document.body.classList.add('guides');
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "hyperframes-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hyperframes composition showing Next.js frontend communicating with Supabase backend through a glowing API gateway",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}
