@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="t-intro"
+        data-width="1920"
+        data-height="1080"
+        data-duration="6"
+      >
+        <div class="hf-scene hf-scene--center">
+          <div class="hf-dots"></div>
+          <div class="hf-glow" data-layout-ignore style="width: 900px; height: 900px; left: 50%; top: 40%; transform: translate(-50%, -50%)"></div>
+
+          <span class="hf-icon-badge hf-icon-badge--lg hf-icon-badge--accent" data-anim="scale-in" data-anim-at="0.1">
+            <svg class="hf-icon"><use href="assets/icons.svg#bag" /></svg>
+          </span>
+
+          <p class="hf-label">Learn Shopify Today · Lesson 01</p>
+
+          <h1 class="hf-display" style="max-width: 1400px">
+            Set up your <span class="hf-lime">first store</span>
+          </h1>
+
+          <p class="hf-body-lg hf-muted" style="max-width: 980px">
+            A ten-minute tour of themes, products and checkout.
+          </p>
+
+          <div class="hf-row" style="gap: 12px; margin-top: 8px" data-anim-group="fade-up" data-anim-at="0.4" data-stagger="0.08">
+            <span class="hf-chip">Themes</span>
+            <span class="hf-chip">Products</span>
+            <span class="hf-chip">Checkout</span>
+          </div>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("t-intro");
+      </script>
+    </template>
+  </body>
+</html>

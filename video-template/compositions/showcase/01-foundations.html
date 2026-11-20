@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="foundations"
+        data-width="1920"
+        data-height="1080"
+        data-duration="10"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+          <div class="hf-glow" data-layout-ignore style="width: 760px; height: 760px; right: -180px; top: -260px"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Design system · 01 Foundations</p>
+            <h1 class="hf-h1">Bento <span class="hf-lime">Editorial</span></h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              Near-black surfaces, hairline structure and one lime accent.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-split hf-split--wide-left hf-split--stretch">
+              <div class="hf-card">
+                <div class="hf-card__head">
+                  <h3 class="hf-h4">Palette</h3>
+                  <span class="hf-chip">4 surfaces</span>
+                </div>
+                <div class="hf-swatches" data-anim-group="fade-up" data-anim-at="0.2" data-stagger="0.07">
+                  <div class="hf-swatch">
+                    <span class="hf-swatch__fill" style="--sw: var(--hf-ink)"></span>
+                    <span class="hf-swatch__name">Ink</span>
+                  </div>
+                  <div class="hf-swatch">
+                    <span class="hf-swatch__fill" style="--sw: var(--hf-surface)"></span>
+                    <span class="hf-swatch__name">Surface</span>
+                  </div>
+                  <div class="hf-swatch">
+                    <span class="hf-swatch__fill" style="--sw: var(--hf-surface-3)"></span>
+                    <span class="hf-swatch__name">Raised</span>
+                  </div>
+                  <div class="hf-swatch">
+                    <span class="hf-swatch__fill" style="--sw: var(--hf-lime)"></span>
+                    <span class="hf-swatch__name">Accent</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hf-card">
+                <div class="hf-card__head">
+                  <h3 class="hf-h4">Inter</h3>
+                  <span class="hf-chip">100–900</span>
+                </div>
+                <div class="hf-typescale">
+                  <span class="hf-typescale__sample" data-anim="scale-in" data-anim-at="0.25">Aa</span>
+                  <div class="hf-typescale__rows" data-anim-group="fade" data-anim-at="0.35" data-stagger="0.06">
+                    <div class="hf-typescale__row"><span>Display</span><span>104 / 600</span></div>
+                    <div class="hf-typescale__row"><span>Heading</span><span>76 / 600</span></div>
+                    <div class="hf-typescale__row"><span>Body</span><span>28 / 400</span></div>
+                    <div class="hf-typescale__row"><span>Label</span><span>28 / 600</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hf-grid hf-grid--3" data-anim-group="fade-up" data-anim-at="0.5" data-stagger="0.08">
+              <div class="hf-card hf-card--flat hf-card--tight">
+                <span class="hf-label">Radius</span>
+                <div class="hf-spec">
+                  <span class="hf-spec__value">20<small>px</small></span>
+                  <span class="hf-small hf-muted">Cards and windows</span>
+                </div>
+              </div>
+              <div class="hf-card hf-card--flat hf-card--tight">
+                <span class="hf-label">Grid</span>
+                <div class="hf-spec">
+                  <span class="hf-spec__value">12<small>col</small></span>
+                  <span class="hf-small hf-muted">96 px safe margins</span>
+                </div>
+              </div>
+              <div class="hf-card hf-card--flat hf-card--tight">
+                <span class="hf-label">Motion</span>
+                <div class="hf-spec">
+                  <span class="hf-spec__value">0.42<small>s</small></span>
+                  <span class="hf-small hf-muted">Power3 ease out</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Foundations · 01</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("foundations");
+      </script>
+    </template>
+  </body>
+</html>

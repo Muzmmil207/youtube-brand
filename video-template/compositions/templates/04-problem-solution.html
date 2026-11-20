@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="t-problem"
+        data-width="1920"
+        data-height="1080"
+        data-duration="6"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Problem → solution</p>
+            <h1 class="hf-h1">Stop losing order notes</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              The fix is one tag and one automation.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-compare hf-fill">
+              <div class="hf-compare__side" data-tone="bad" data-anim="slide-left" data-anim-at="0.15">
+                <span class="hf-compare__title">Today</span>
+                <ul class="hf-list" data-marker="cross">
+                  <li>Requests arrive in DMs and email</li>
+                  <li>Notes get copied by hand</li>
+                  <li>Someone forgets the follow-up</li>
+                </ul>
+                <span class="hf-chip hf-chip--danger" style="margin-top: auto">4 hours a week</span>
+              </div>
+
+              <div class="hf-compare__vs" data-anim="scale-in" data-anim-at="0.4">vs</div>
+
+              <div class="hf-compare__side" data-tone="good" data-anim="slide-right" data-anim-at="0.15">
+                <span class="hf-compare__title">With order tags</span>
+                <ul class="hf-list" data-marker="check">
+                  <li>Every request gets a tag</li>
+                  <li>The tag triggers one email</li>
+                  <li>The order page shows the status</li>
+                </ul>
+                <span class="hf-chip hf-chip--lime" style="margin-top: auto">10 minutes a week</span>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Problem / solution</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("t-problem");
+      </script>
+    </template>
+  </body>
+</html>

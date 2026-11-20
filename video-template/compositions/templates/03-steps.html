@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="t-steps"
+        data-width="1920"
+        data-height="1080"
+        data-duration="6"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Tutorial · Step by step</p>
+            <h1 class="hf-h1">Add your first product</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              Three screens, about four minutes.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <ol class="hf-steps" data-anim-group="fade-down" data-anim-at="0.15" data-stagger="0.08">
+              <li class="hf-step" data-state="active">
+                <span class="hf-step__num">1</span>
+                <span class="hf-step__text"><span class="hf-step__label">Open Products</span></span>
+              </li>
+              <li class="hf-step" data-state="pending">
+                <span class="hf-step__num">2</span>
+                <span class="hf-step__text"><span class="hf-step__label">Add details</span></span>
+              </li>
+              <li class="hf-step" data-state="pending">
+                <span class="hf-step__num">3</span>
+                <span class="hf-step__text"><span class="hf-step__label">Publish</span></span>
+              </li>
+            </ol>
+
+            <div class="hf-grid hf-grid--3 hf-fill">
+              <div class="hf-card hf-card--accent" data-anim="fade-up" data-anim-at="0.3">
+                <span class="hf-icon-badge hf-icon-badge--sm hf-icon-badge--accent"><svg class="hf-icon"><use href="assets/icons.svg#plus" /></svg></span>
+                <h3 class="hf-h4">Open Products</h3>
+                <p class="hf-card__body">
+                  In the admin sidebar, choose Products, then Add product.
+                </p>
+                <div class="hf-stack hf-stack--tight hf-fill" style="justify-content: center">
+                  <div class="hf-mock hf-mock--lime" style="height: 44px"></div>
+                  <div class="hf-mock" style="height: 44px"></div>
+                  <div class="hf-mock" style="height: 44px"></div>
+                </div>
+                <span class="hf-chip" style="margin-top: auto">30 seconds</span>
+              </div>
+
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.4">
+                <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#tag" /></svg></span>
+                <h3 class="hf-h4">Add the details</h3>
+                <p class="hf-card__body">
+                  Title, price and at least three photos on a clean background.
+                </p>
+                <div class="hf-stack hf-stack--tight hf-fill" style="justify-content: center">
+                  <div class="hf-mock" style="height: 44px"></div>
+                  <div class="hf-mock" style="height: 44px"></div>
+                  <div class="hf-row" style="gap: 10px">
+                    <div class="hf-mock" style="flex: 1; height: 64px"></div>
+                    <div class="hf-mock" style="flex: 1; height: 64px"></div>
+                    <div class="hf-mock" style="flex: 1; height: 64px"></div>
+                  </div>
+                </div>
+                <span class="hf-chip hf-chip--lime" style="margin-top: auto">2 minutes</span>
+              </div>
+
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.5">
+                <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#globe" /></svg></span>
+                <h3 class="hf-h4">Publish</h3>
+                <p class="hf-card__body">
+                  Set the status to Active and save. The product is live.
+                </p>
+                <div class="hf-stack hf-stack--tight hf-fill" style="justify-content: center">
+                  <div class="hf-mock" style="height: 44px"></div>
+                  <div class="hf-row hf-row--between" style="padding: 4px 0">
+                    <span class="hf-small hf-muted">Active</span>
+                    <span class="hf-toggle" data-on></span>
+                  </div>
+                </div>
+                <span class="hf-chip" style="margin-top: auto">1 minute</span>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Tutorial</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("t-steps");
+      </script>
+    </template>
+  </body>
+</html>

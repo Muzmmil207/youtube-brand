@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="compare"
+        data-width="1920"
+        data-height="1080"
+        data-duration="10"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Design system · 05 Compare</p>
+            <h1 class="hf-h1">Make the gap obvious</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              Put the two states side by side and let the difference do the talking.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-compare hf-fill">
+              <div class="hf-compare__side" data-tone="bad" data-anim="slide-left" data-anim-at="0.2">
+                <span class="hf-compare__title">Without a system</span>
+                <ul class="hf-list hf-list--sm" data-marker="cross">
+                  <li>Every scene starts from zero</li>
+                  <li>Colours and spacing drift</li>
+                  <li>Review catches the same mistakes</li>
+                </ul>
+              </div>
+
+              <div class="hf-compare__vs" data-anim="scale-in" data-anim-at="0.45">vs</div>
+
+              <div class="hf-compare__side" data-tone="good" data-anim="slide-right" data-anim-at="0.2">
+                <span class="hf-compare__title">With a system</span>
+                <ul class="hf-list hf-list--sm" data-marker="check">
+                  <li>Scenes start from a template</li>
+                  <li>Tokens keep every frame on brand</li>
+                  <li>Review checks content, not cleanup</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="hf-ba hf-fill" data-anim="fade-up" data-anim-at="0.55">
+              <div class="hf-ba__panel" data-tone="before">
+                <span class="hf-ba__tag">Before</span>
+                <div class="hf-stack hf-stack--tight hf-fill">
+                  <div class="hf-mock hf-fill"></div>
+                  <div class="hf-row" style="gap: 10px">
+                    <div class="hf-mock" style="flex: 1; height: 64px"></div>
+                    <div class="hf-mock" style="flex: 1; height: 64px"></div>
+                    <div class="hf-mock" style="flex: 1; height: 64px"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hf-ba__panel" data-tone="after">
+                <span class="hf-ba__tag">After</span>
+                <div class="hf-stack hf-stack--tight hf-fill">
+                  <div class="hf-mock hf-mock--lime hf-fill"></div>
+                  <div class="hf-row" style="gap: 10px">
+                    <div class="hf-mock hf-mock--lime" style="flex: 1; height: 64px"></div>
+                    <div class="hf-mock hf-mock--lime" style="flex: 1; height: 64px"></div>
+                    <div class="hf-mock hf-mock--lime" style="flex: 1; height: 64px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Compare · 05</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("compare");
+      </script>
+    </template>
+  </body>
+</html>

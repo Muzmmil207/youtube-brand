@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="t-concept"
+        data-width="1920"
+        data-height="1080"
+        data-duration="6"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Concept</p>
+            <h1 class="hf-h1">What a theme controls</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              A theme changes how the store looks. It never changes what you sell.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-split hf-split--stretch hf-fill">
+              <div class="hf-stack" style="justify-content: center; gap: 32px">
+                <p class="hf-body-lg">
+                  Think of the theme as the frame around your products. Swap the frame,
+                  keep the picture.
+                </p>
+                <ul class="hf-list" data-marker="dot" data-anim-group="fade-up" data-anim-at="0.35" data-stagger="0.08">
+                  <li><strong>Layout</strong> — where sections sit on the page</li>
+                  <li><strong>Colour</strong> — backgrounds, text and buttons</li>
+                  <li><strong>Type</strong> — the voice of every headline</li>
+                </ul>
+                <div class="hf-callout" data-tone="tip" data-anim="fade-up" data-anim-at="0.65">
+                  <span class="hf-callout__label">Remember</span>
+                  <p class="hf-callout__text">
+                    Products, orders and customers live outside the theme.
+                  </p>
+                </div>
+              </div>
+
+              <div class="hf-card" style="justify-content: center; gap: 0">
+                <div class="hf-row" style="justify-content: center">
+                  <span class="hf-icon-badge hf-icon-badge--lg hf-icon-badge--accent">
+                    <svg class="hf-icon"><use href="assets/icons.svg#palette" /></svg>
+                  </span>
+                </div>
+                <span class="hf-connector hf-connector--v" style="height: 56px; align-self: center" data-anim="grow-y" data-anim-at="0.4"></span>
+                <div class="hf-row" style="justify-content: center; gap: 28px" data-anim-group="scale-in" data-anim-at="0.55" data-stagger="0.08">
+                  <span class="hf-icon-badge"><svg class="hf-icon"><use href="assets/icons.svg#layout" /></svg></span>
+                  <span class="hf-icon-badge"><svg class="hf-icon"><use href="assets/icons.svg#tag" /></svg></span>
+                  <span class="hf-icon-badge"><svg class="hf-icon"><use href="assets/icons.svg#code" /></svg></span>
+                </div>
+                <div class="hf-row" style="justify-content: center; gap: 28px; margin-top: 16px">
+                  <span class="hf-small hf-muted" style="width: 72px; text-align: center">Layout</span>
+                  <span class="hf-small hf-muted" style="width: 72px; text-align: center">Colour</span>
+                  <span class="hf-small hf-muted" style="width: 72px; text-align: center">Type</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Concept</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("t-concept");
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="education"
+        data-width="1920"
+        data-height="1080"
+        data-duration="10"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Design system · 03 Education</p>
+            <h1 class="hf-h1">Teach one step</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              Show where the viewer is, what to do, and what to avoid.
+            </p>
+          </header>
+
+          <div class="hf-main" style="justify-content: center">
+            <ol class="hf-steps" data-anim-group="fade-down" data-anim-at="0.15" data-stagger="0.08">
+              <li class="hf-step" data-state="done">
+                <span class="hf-step__num">1</span>
+                <span class="hf-step__text">
+                  <span class="hf-step__label">Choose theme</span>
+                </span>
+              </li>
+              <li class="hf-step" data-state="active">
+                <span class="hf-step__num">2</span>
+                <span class="hf-step__text">
+                  <span class="hf-step__label">Customize</span>
+                </span>
+              </li>
+              <li class="hf-step" data-state="pending">
+                <span class="hf-step__num">3</span>
+                <span class="hf-step__text">
+                  <span class="hf-step__label">Preview</span>
+                </span>
+              </li>
+              <li class="hf-step" data-state="pending">
+                <span class="hf-step__num">4</span>
+                <span class="hf-step__text">
+                  <span class="hf-step__label">Publish</span>
+                </span>
+              </li>
+            </ol>
+
+            <div class="hf-grid hf-grid--3">
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.35">
+                <span class="hf-label">Do</span>
+                <ul class="hf-list hf-list--sm" data-marker="check">
+                  <li>One accent per scene</li>
+                  <li>Body text at 28 px or larger</li>
+                  <li>Name the file after the scene</li>
+                </ul>
+                <span class="hf-chip" style="margin-top: auto">3 rules</span>
+              </div>
+
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.45">
+                <span class="hf-label">Avoid</span>
+                <ul class="hf-list hf-list--sm" data-marker="cross">
+                  <li>Two competing accent colours</li>
+                  <li>Text smaller than 28 px</li>
+                  <li>Motion that loops forever</li>
+                </ul>
+                <span class="hf-chip" style="margin-top: auto">3 mistakes</span>
+              </div>
+
+              <div class="hf-stack" data-anim-group="fade-up" data-anim-at="0.55" data-stagger="0.1">
+                <div class="hf-callout" data-tone="tip">
+                  <span class="hf-callout__label">Tip</span>
+                  <p class="hf-callout__text">
+                    If the text needs to shrink, cut content instead.
+                  </p>
+                </div>
+                <div class="hf-callout" data-tone="warning">
+                  <span class="hf-callout__label">Warning</span>
+                  <p class="hf-callout__text">
+                    Never ship a scene with an empty first frame.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Education · 03</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("education");
+      </script>
+    </template>
+  </body>
+</html>

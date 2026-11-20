@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="flows"
+        data-width="1920"
+        data-height="1080"
+        data-duration="10"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Design system · 04 Flows</p>
+            <h1 class="hf-h1">Show the path</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              One row makes progress visible: start, current step, what comes next.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-card hf-card--flat" data-anim="fade-down" data-anim-at="0.15">
+              <div class="hf-flow">
+                <div class="hf-flow__node">
+                  <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#plus" /></svg></span>
+                  <span class="hf-flow__label">Draft</span>
+                  <span class="hf-flow__meta">Step 1</span>
+                </div>
+                <span class="hf-flow__link" data-anim="grow-x" data-anim-at="0.45"></span>
+                <div class="hf-flow__node">
+                  <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#bag" /></svg></span>
+                  <span class="hf-flow__label">Add product</span>
+                  <span class="hf-flow__meta">Step 2</span>
+                </div>
+                <span class="hf-flow__link" data-anim="grow-x" data-anim-at="0.6"></span>
+                <div class="hf-flow__node">
+                  <span class="hf-icon-badge hf-icon-badge--sm hf-icon-badge--accent"><svg class="hf-icon"><use href="assets/icons.svg#globe" /></svg></span>
+                  <span class="hf-flow__label">Publish</span>
+                  <span class="hf-flow__meta">Step 3</span>
+                </div>
+                <span class="hf-flow__link" data-anim="grow-x" data-anim-at="0.75"></span>
+                <div class="hf-flow__node">
+                  <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#dollar" /></svg></span>
+                  <span class="hf-flow__label">First sale</span>
+                  <span class="hf-flow__meta">Step 4</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hf-split hf-split--stretch hf-fill">
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.35">
+                <span class="hf-label">Numbered steps</span>
+                <ol class="hf-numsteps hf-fill" style="justify-content: center">
+                  <li class="hf-numstep" data-state="active">
+                    <span class="hf-numstep__num">1</span>
+                    <h4 class="hf-h4">Add the photos</h4>
+                    <p class="hf-numstep__body">
+                      Use a clean background and at least three angles.
+                    </p>
+                  </li>
+                  <li class="hf-numstep">
+                    <span class="hf-numstep__num">2</span>
+                    <h4 class="hf-h4">Write the description</h4>
+                    <p class="hf-numstep__body">
+                      Lead with the outcome, then the details.
+                    </p>
+                  </li>
+                  <li class="hf-numstep">
+                    <span class="hf-numstep__num">3</span>
+                    <h4 class="hf-h4">Set the price</h4>
+                    <p class="hf-numstep__body">
+                      Compare with three similar products first.
+                    </p>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.45">
+                <span class="hf-label">Timeline</span>
+                <ol class="hf-timeline hf-fill" style="justify-content: center">
+                  <li class="hf-timeline__item" data-state="active">
+                    <span class="hf-timeline__dot"></span>
+                    <h4 class="hf-h4">Day 1 · Build</h4>
+                    <p class="hf-timeline__body">
+                      Add the product and finish the copy.
+                    </p>
+                  </li>
+                  <li class="hf-timeline__item">
+                    <span class="hf-timeline__dot"></span>
+                    <h4 class="hf-h4">Day 3 · Review</h4>
+                    <p class="hf-timeline__body">
+                      Check the page on mobile and desktop.
+                    </p>
+                  </li>
+                  <li class="hf-timeline__item">
+                    <span class="hf-timeline__dot"></span>
+                    <h4 class="hf-h4">Day 7 · Launch</h4>
+                    <p class="hf-timeline__body">
+                      Publish and share the first campaign.
+                    </p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Flows · 04</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("flows");
+      </script>
+    </template>
+  </body>
+</html>

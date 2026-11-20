@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Learn Shopify Today — Bento Editorial</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--hf-ink);
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--hf-ink);
+        isolation: isolate;
+      }
+
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      Design-system showcase. Each chapter validates one part of the system,
+      then the nine scene templates play in order. To build a real video,
+      replace these mounts with your own scene files (see DESIGN.md).
+    -->
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="144"
+      data-width="1920"
+      data-height="1080"
+      data-no-timeline
+    >
+      <!-- 01–09: component showcase chapters -->
+      <div id="foundations" class="clip" data-composition-id="foundations" data-composition-src="compositions/showcase/01-foundations.html" data-start="0" data-duration="10" data-track-index="0"></div>
+      <div id="layout" class="clip" data-composition-id="layout" data-composition-src="compositions/showcase/02-layout.html" data-start="10" data-duration="10" data-track-index="0"></div>
+      <div id="education" class="clip" data-composition-id="education" data-composition-src="compositions/showcase/03-education.html" data-start="20" data-duration="10" data-track-index="0"></div>
+      <div id="flows" class="clip" data-composition-id="flows" data-composition-src="compositions/showcase/04-flows.html" data-start="30" data-duration="10" data-track-index="0"></div>
+      <div id="compare" class="clip" data-composition-id="compare" data-composition-src="compositions/showcase/05-compare.html" data-start="40" data-duration="10" data-track-index="0"></div>
+      <div id="data" class="clip" data-composition-id="data" data-composition-src="compositions/showcase/06-data.html" data-start="50" data-duration="10" data-track-index="0"></div>
+      <div id="admin" class="clip" data-composition-id="admin" data-composition-src="compositions/showcase/07-admin.html" data-start="60" data-duration="10" data-track-index="0"></div>
+      <div id="storefront" class="clip" data-composition-id="storefront" data-composition-src="compositions/showcase/08-storefront.html" data-start="70" data-duration="10" data-track-index="0"></div>
+      <div id="motion" class="clip" data-composition-id="motion" data-composition-src="compositions/showcase/09-motion.html" data-start="80" data-duration="10" data-track-index="0"></div>
+
+      <!-- Scene templates -->
+      <div id="t-intro" class="clip" data-composition-id="t-intro" data-composition-src="compositions/templates/01-intro.html" data-start="90" data-duration="6" data-track-index="0"></div>
+      <div id="t-concept" class="clip" data-composition-id="t-concept" data-composition-src="compositions/templates/02-concept.html" data-start="96" data-duration="6" data-track-index="0"></div>
+      <div id="t-steps" class="clip" data-composition-id="t-steps" data-composition-src="compositions/templates/03-steps.html" data-start="102" data-duration="6" data-track-index="0"></div>
+      <div id="t-problem" class="clip" data-composition-id="t-problem" data-composition-src="compositions/templates/04-problem-solution.html" data-start="108" data-duration="6" data-track-index="0"></div>
+      <div id="t-features" class="clip" data-composition-id="t-features" data-composition-src="compositions/templates/05-features.html" data-start="114" data-duration="6" data-track-index="0"></div>
+      <div id="t-compare" class="clip" data-composition-id="t-compare" data-composition-src="compositions/templates/06-comparison.html" data-start="120" data-duration="6" data-track-index="0"></div>
+      <div id="t-workflow" class="clip" data-composition-id="t-workflow" data-composition-src="compositions/templates/07-workflow.html" data-start="126" data-duration="6" data-track-index="0"></div>
+      <div id="t-stats" class="clip" data-composition-id="t-stats" data-composition-src="compositions/templates/08-stats.html" data-start="132" data-duration="6" data-track-index="0"></div>
+      <div id="t-summary" class="clip" data-composition-id="t-summary" data-composition-src="compositions/templates/09-summary.html" data-start="138" data-duration="6" data-track-index="0"></div>
+    </div>
+  </body>
+</html>

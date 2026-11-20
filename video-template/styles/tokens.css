@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Learn Shopify Today — design tokens
+   The single source of truth for colour, type, space, radius and motion.
+   Never hard-code a value in a scene. Use these variables.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  /* --- Colour: near-black bento surfaces ------------------------------- */
+  --hf-ink: #08090a;
+  --hf-surface: #0f1113;
+  --hf-surface-2: #15181b;
+  --hf-surface-3: #1a1d20;
+  --hf-line: rgba(255, 255, 255, 0.07);
+  --hf-line-strong: rgba(255, 255, 255, 0.13);
+
+  /* --- Colour: text ---------------------------------------------------- */
+  --hf-text: #f4f5f6;
+  --hf-muted: #9ba1a8;
+  --hf-dim: #6b7278; /* decorative only — never text */
+
+  /* --- Colour: the one system accent ---------------------------------- */
+  --hf-lime: #95bf47;
+  --hf-lime-soft: #bbdd82;
+  --hf-lime-deep: #4e7a33;
+  --hf-glow: rgba(149, 191, 71, 0.16);
+  --hf-glow-soft: rgba(149, 191, 71, 0.07);
+
+  /* --- Colour: semantic callout tones --------------------------------- */
+  --hf-tip: #95bf47;
+  --hf-tip-bg: rgba(149, 191, 71, 0.1);
+  --hf-warning: #e0a458;
+  --hf-warning-bg: rgba(224, 164, 88, 0.1);
+  --hf-info: #7fa6d9;
+  --hf-info-bg: rgba(127, 166, 217, 0.1);
+  --hf-danger: #d9736b;
+  --hf-danger-bg: rgba(217, 115, 107, 0.1);
+
+  /* --- Type ------------------------------------------------------------ */
+  --hf-font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --hf-display: 104px;
+  --hf-h1: 76px;
+  --hf-h2: 56px;
+  --hf-h3: 40px;
+  --hf-h4: 30px;
+  --hf-body-lg: 32px;
+  --hf-body: 28px;
+  --hf-small: 28px;
+  --hf-label: 28px;
+
+  --hf-lh-tight: 1.02;
+  --hf-lh-heading: 1.1;
+  --hf-lh-body: 1.5;
+
+  --hf-track-display: -0.045em;
+  --hf-track-h1: -0.04em;
+  --hf-track-h2: -0.035em;
+  --hf-track-h3: -0.025em;
+  --hf-track-label: 0.12em;
+
+  /* --- Space (4px base) ------------------------------------------------ */
+  --hf-s1: 4px;
+  --hf-s2: 8px;
+  --hf-s3: 12px;
+  --hf-s4: 16px;
+  --hf-s5: 24px;
+  --hf-s6: 32px;
+  --hf-s7: 48px;
+  --hf-s8: 64px;
+  --hf-s9: 96px;
+  --hf-s10: 128px;
+
+  /* --- Layout ---------------------------------------------------------- */
+  --hf-w: 1920px;
+  --hf-h: 1080px;
+  --hf-safe-x: 96px;
+  --hf-safe-top: 76px;
+  --hf-safe-bottom: 68px;
+  --hf-card-pad: 40px;
+  --hf-gap: 24px;
+  --hf-gap-lg: 32px;
+
+  /* --- Radius ---------------------------------------------------------- */
+  --hf-r-sm: 8px;
+  --hf-r-md: 12px;
+  --hf-r-lg: 16px;
+  --hf-r-xl: 20px;
+  --hf-r-2xl: 24px;
+  --hf-r-pill: 999px;
+
+  /* --- Elevation ------------------------------------------------------- */
+  --hf-shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 24px 48px -24px #000;
+  --hf-shadow-window: inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 40px 80px -32px #000;
+  --hf-shadow-glow: 0 0 60px -12px rgba(149, 191, 71, 0.35);
+
+  /* --- Motion ---------------------------------------------------------- */
+  --hf-fast: 0.24s;
+  --hf-base: 0.42s;
+  --hf-slow: 0.72s;
+  --hf-stagger: 0.08s;
+}

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="admin"
+        data-width="1920"
+        data-height="1080"
+        data-duration="10"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Design system · 07 Admin UI</p>
+            <h1 class="hf-h1">Show the real screen</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              Illustrative Shopify-style UI, built from the same tokens as every other scene.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-split hf-split--wide-left hf-split--stretch hf-fill">
+              <div class="hf-window" data-anim="fade-up" data-anim-at="0.2">
+                <div class="hf-window__bar">
+                  <span class="hf-window__dots"><i></i><i></i><i></i></span>
+                  <span class="hf-window__url">admin.shopify.com</span>
+                  <span class="hf-chip hf-chip--lime"><span class="hf-chip__dot"></span>Live</span>
+                </div>
+                <div class="hf-window__body">
+                  <div class="hf-admin">
+                    <aside class="hf-admin__nav">
+                      <span class="hf-admin__brand">
+                        <svg class="hf-icon" style="width: 24px; height: 24px"><use href="assets/icons.svg#bag" /></svg>
+                        My store
+                      </span>
+                      <nav class="hf-menu">
+                        <span class="hf-menu__item is-active">Home</span>
+                        <span class="hf-menu__item">Orders</span>
+                        <span class="hf-menu__item">Products</span>
+                        <span class="hf-menu__item">Analytics</span>
+                        <span class="hf-menu__item">Online store</span>
+                        <span class="hf-menu__item">Settings</span>
+                      </nav>
+                    </aside>
+
+                    <div class="hf-admin__main">
+                      <div class="hf-admin__top">
+                        <span class="hf-admin__title">Home</span>
+                        <span class="hf-chip">Last 30 days</span>
+                      </div>
+                      <div class="hf-admin__content">
+                        <div class="hf-admin__stats">
+                          <div class="hf-admin__panel">
+                            <span class="hf-admin__label">Sales</span>
+                            <span class="hf-admin__value hf-num">$12,480</span>
+                          </div>
+                          <div class="hf-admin__panel">
+                            <span class="hf-admin__label">Orders</span>
+                            <span class="hf-admin__value hf-num">1,204</span>
+                          </div>
+                          <div class="hf-admin__panel">
+                            <span class="hf-admin__label">Visitors</span>
+                            <span class="hf-admin__value hf-num">31.6K</span>
+                          </div>
+                        </div>
+
+                        <div class="hf-admin__panel hf-fill">
+                          <div class="hf-row hf-row--between" style="margin-bottom: 8px">
+                            <span class="hf-admin__label">Recent orders</span>
+                            <span class="hf-small hf-muted">View all</span>
+                          </div>
+                          <div class="hf-order__rows">
+                            <div class="hf-order__row"><span>#1042 · Linen shirt</span><span>$76.00</span></div>
+                            <div class="hf-order__row"><span>#1041 · Ceramic mug</span><span>$32.00</span></div>
+                            <div class="hf-order__row"><span>#1040 · Canvas tote</span><span>$48.00</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hf-stack">
+                <div class="hf-product-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr))" data-anim-group="fade-up" data-anim-at="0.4" data-stagger="0.08">
+                  <div class="hf-product">
+                    <div class="hf-product__media">
+                      <svg class="hf-icon"><use href="assets/icons.svg#tag" /></svg>
+                    </div>
+                    <div class="hf-product__row">
+                      <span class="hf-product__name">Linen shirt</span>
+                      <span class="hf-product__price hf-num">$68</span>
+                    </div>
+                  </div>
+                  <div class="hf-product">
+                    <div class="hf-product__media">
+                      <svg class="hf-icon"><use href="assets/icons.svg#box" /></svg>
+                    </div>
+                    <div class="hf-product__row">
+                      <span class="hf-product__name">Ceramic mug</span>
+                      <span class="hf-product__price hf-num">$32</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hf-card hf-fill" data-anim="fade-up" data-anim-at="0.55">
+                  <div class="hf-card__head">
+                    <h4 class="hf-h4">Order #1042</h4>
+                    <span class="hf-chip hf-chip--lime">Paid</span>
+                  </div>
+                  <div class="hf-order hf-fill">
+                    <div class="hf-order__rows">
+                      <div class="hf-order__row"><span>Linen shirt × 1</span><span>$68.00</span></div>
+                    </div>
+                    <div class="hf-order__total"><span>Total</span><strong>$76.00</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Admin UI · 07</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("admin");
+      </script>
+    </template>
+  </body>
+</html>

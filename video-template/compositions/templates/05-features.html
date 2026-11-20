@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="t-features"
+        data-width="1920"
+        data-height="1080"
+        data-duration="6"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Feature breakdown</p>
+            <h1 class="hf-h1">Three ways to sell more</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              Each feature earns its own card, icon and one-line promise.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-grid hf-grid--3 hf-fill">
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.2">
+                <span class="hf-icon-badge"><svg class="hf-icon"><use href="assets/icons.svg#mail" /></svg></span>
+                <h3 class="hf-h4">Abandoned cart</h3>
+                <p class="hf-card__body">
+                  Send one reminder and recover the checkouts people leave behind.
+                </p>
+                <div class="hf-stack hf-stack--tight hf-fill" style="justify-content: center">
+                  <div class="hf-row hf-row--between">
+                    <span class="hf-small hf-muted">Recovered</span>
+                    <span class="hf-small hf-lime hf-num">12%</span>
+                  </div>
+                  <div class="hf-progress" style="--v: 0.12">
+                    <span class="hf-progress__fill" data-anim="grow-x" data-anim-at="0.55"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.3">
+                <span class="hf-icon-badge"><svg class="hf-icon"><use href="assets/icons.svg#layers" /></svg></span>
+                <h3 class="hf-h4">Product bundles</h3>
+                <p class="hf-card__body">
+                  Group three products and raise the average order value.
+                </p>
+                <div class="hf-row hf-fill" style="gap: 12px; align-items: flex-end">
+                  <div class="hf-mock" style="flex: 1; height: 104px"></div>
+                  <div class="hf-mock" style="flex: 1; height: 136px"></div>
+                  <div class="hf-mock hf-mock--lime" style="flex: 1; height: 168px"></div>
+                </div>
+              </div>
+
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.4">
+                <span class="hf-icon-badge"><svg class="hf-icon"><use href="assets/icons.svg#truck" /></svg></span>
+                <h3 class="hf-h4">Local pickup</h3>
+                <p class="hf-card__body">
+                  Let nearby customers collect the same day, with no shipping cost.
+                </p>
+                <div class="hf-stack hf-stack--tight hf-fill" style="justify-content: center">
+                  <div class="hf-mock" style="height: 76px"></div>
+                  <div class="hf-mock hf-mock--lime" style="height: 76px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Features</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("t-features");
+      </script>
+    </template>
+  </body>
+</html>

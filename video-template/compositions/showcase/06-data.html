@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="data"
+        data-width="1920"
+        data-height="1080"
+        data-duration="10"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Design system · 06 Data</p>
+            <h1 class="hf-h1">Numbers with a point</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              One hero number, one comparison, one trend. Nothing else.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-grid hf-grid--3" data-anim-group="fade-up" data-anim-at="0.15" data-stagger="0.08">
+              <div class="hf-card">
+                <span class="hf-label">Revenue</span>
+                <div class="hf-metric">
+                  <span class="hf-metric__value hf-count" data-anim="count" data-to="12480" data-prefix="$" data-anim-at="0.4">$12,480</span>
+                  <span class="hf-metric__delta" data-tone="up">+18.2% vs last month</span>
+                </div>
+              </div>
+              <div class="hf-card">
+                <span class="hf-label">Orders</span>
+                <div class="hf-metric">
+                  <span class="hf-metric__value hf-count" data-anim="count" data-to="1204" data-anim-at="0.5">1,204</span>
+                  <span class="hf-metric__delta" data-tone="up">+9.4% vs last month</span>
+                </div>
+              </div>
+              <div class="hf-card">
+                <span class="hf-label">Conversion</span>
+                <div class="hf-metric">
+                  <span class="hf-metric__value hf-count" data-anim="count" data-to="3.8" data-decimals="1" data-suffix="%" data-anim-at="0.6">3.8%</span>
+                  <span class="hf-metric__delta" data-tone="down">-0.3% vs last month</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hf-split hf-split--wide-left hf-split--stretch hf-fill">
+              <div class="hf-card">
+                <div class="hf-card__head">
+                  <h3 class="hf-h4">Sessions this week</h3>
+                  <span class="hf-chip hf-chip--lime">Peak Saturday</span>
+                </div>
+                <div class="hf-chart hf-fill">
+                  <div class="hf-chart__plot">
+                    <div class="hf-chart__col">
+                      <div class="hf-chart__track"><div class="hf-chart__bar" style="--v: 0.38" data-anim="grow-y" data-anim-at="0.45"></div></div>
+                      <span class="hf-chart__x">Mon</span>
+                    </div>
+                    <div class="hf-chart__col">
+                      <div class="hf-chart__track"><div class="hf-chart__bar" style="--v: 0.52" data-anim="grow-y" data-anim-at="0.5"></div></div>
+                      <span class="hf-chart__x">Tue</span>
+                    </div>
+                    <div class="hf-chart__col">
+                      <div class="hf-chart__track"><div class="hf-chart__bar" style="--v: 0.46" data-anim="grow-y" data-anim-at="0.55"></div></div>
+                      <span class="hf-chart__x">Wed</span>
+                    </div>
+                    <div class="hf-chart__col">
+                      <div class="hf-chart__track"><div class="hf-chart__bar" style="--v: 0.68" data-anim="grow-y" data-anim-at="0.6"></div></div>
+                      <span class="hf-chart__x">Thu</span>
+                    </div>
+                    <div class="hf-chart__col">
+                      <div class="hf-chart__track"><div class="hf-chart__bar" style="--v: 0.6" data-anim="grow-y" data-anim-at="0.65"></div></div>
+                      <span class="hf-chart__x">Fri</span>
+                    </div>
+                    <div class="hf-chart__col">
+                      <div class="hf-chart__track"><div class="hf-chart__bar is-peak" style="--v: 0.92" data-anim="grow-y" data-anim-at="0.7"></div></div>
+                      <span class="hf-chart__x">Sat</span>
+                    </div>
+                    <div class="hf-chart__col">
+                      <div class="hf-chart__track"><div class="hf-chart__bar" style="--v: 0.74" data-anim="grow-y" data-anim-at="0.75"></div></div>
+                      <span class="hf-chart__x">Sun</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hf-statcompare hf-fill" data-anim="fade-up" data-anim-at="0.5">
+                <div class="hf-statcompare__item">
+                  <span class="hf-label">Manual</span>
+                  <span class="hf-statcompare__value hf-num">6 hrs</span>
+                </div>
+                <div class="hf-statcompare__arrow">→</div>
+                <div class="hf-statcompare__item" data-tone="good">
+                  <span class="hf-label">Automated</span>
+                  <span class="hf-statcompare__value hf-num">12 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Data · 06</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("data");
+      </script>
+    </template>
+  </body>
+</html>

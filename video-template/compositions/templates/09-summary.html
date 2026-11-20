@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="t-summary"
+        data-width="1920"
+        data-height="1080"
+        data-duration="6"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Summary</p>
+            <h1 class="hf-h1">Three things to remember</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              If the viewer keeps only one frame, make it this one.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-grid hf-grid--3 hf-fill">
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.15">
+                <span class="hf-h2 hf-lime hf-num">01</span>
+                <h3 class="hf-h4">The theme is the frame</h3>
+                <p class="hf-card__body">
+                  Products stay the same when you switch themes.
+                </p>
+                <span class="hf-chip" style="margin-top: auto">Theme</span>
+              </div>
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.25">
+                <span class="hf-h2 hf-lime hf-num">02</span>
+                <h3 class="hf-h4">One product, three photos</h3>
+                <p class="hf-card__body">
+                  Clean background, real scale, and a clear price.
+                </p>
+                <span class="hf-chip" style="margin-top: auto">Product</span>
+              </div>
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.35">
+                <span class="hf-h2 hf-lime hf-num">03</span>
+                <h3 class="hf-h4">Publish, then check mobile</h3>
+                <p class="hf-card__body">
+                  Most first orders come from a phone, not a desktop.
+                </p>
+                <span class="hf-chip" style="margin-top: auto">Publish</span>
+              </div>
+            </div>
+
+            <div class="hf-callout" data-tone="tip" data-anim="fade-up" data-anim-at="0.55">
+              <span class="hf-callout__label">Next lesson</span>
+              <p class="hf-callout__text">
+                Connect a payment provider and take your first test order.
+              </p>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Summary</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("t-summary");
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,14 +1,16 @@
 {
-  "name": "hyperframes-template",
-  "version": "1.0.0",
+  "name": "learn-shopify-today-video-template",
+  "version": "2.0.0",
   "private": true,
-  "description": "Hyperframes composition showing Next.js frontend communicating with Supabase backend through a glowing API gateway",
+  "type": "module",
+  "description": "Reusable HyperFrames design system and scene templates for Learn Shopify Today tutorials",
   "scripts": {
-    "dev": "vite",
-    "preview": "vite",
-    "build": "vite build"
-  },
-  "devDependencies": {
-    "vite": "^6.2.0"
+    "dev": "npx --yes hyperframes@0.9.70 preview",
+    "preview": "npx --yes hyperframes@0.9.70 preview",
+    "lint": "npx --yes hyperframes@0.9.70 lint --verbose",
+    "check": "npx --yes hyperframes@0.9.70 check --at-transitions",
+    "snapshot": "npx --yes hyperframes@0.9.70 snapshot --review",
+    "render": "npx --yes hyperframes@0.9.70 render",
+    "audit": "node scripts/audit-design.mjs"
   }
 }

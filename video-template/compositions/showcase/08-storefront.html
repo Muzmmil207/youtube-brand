@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="storefront"
+        data-width="1920"
+        data-height="1080"
+        data-duration="10"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Design system · 08 Storefront</p>
+            <h1 class="hf-h1">What the customer sees</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              Pair the admin with the storefront so every change has a visible result.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-split hf-split--wide-left hf-split--stretch hf-fill">
+              <div class="hf-storefront" data-anim="fade-up" data-anim-at="0.2">
+                <div class="hf-storefront__bar">
+                  <span class="hf-storefront__brand">North &amp; Pine</span>
+                  <span class="hf-storefront__nav">
+                    <span>Shop</span>
+                    <span>About</span>
+                    <span>Journal</span>
+                  </span>
+                  <span class="hf-chip">Cart · 0</span>
+                </div>
+                <div class="hf-storefront__hero">
+                  <span class="hf-label">New season</span>
+                  <h3 class="hf-h3">Made for slow mornings</h3>
+                  <span class="hf-btn">Shop the collection</span>
+                </div>
+                <div class="hf-storefront__grid">
+                  <div class="hf-storefront__tile"><svg class="hf-icon"><use href="assets/icons.svg#bag" /></svg></div>
+                  <div class="hf-storefront__tile"><svg class="hf-icon"><use href="assets/icons.svg#tag" /></svg></div>
+                  <div class="hf-storefront__tile"><svg class="hf-icon"><use href="assets/icons.svg#box" /></svg></div>
+                </div>
+              </div>
+
+              <div class="hf-stack hf-fill">
+                <div class="hf-app" data-anim="fade-up" data-anim-at="0.35">
+                  <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#mail" /></svg></span>
+                  <div class="hf-stack hf-stack--tight hf-fill">
+                    <span class="hf-app__name">Klaviyo</span>
+                    <span class="hf-small hf-muted">Email marketing</span>
+                  </div>
+                  <span class="hf-chip hf-chip--lime"><span class="hf-chip__dot"></span>Connected</span>
+                </div>
+
+                <div class="hf-card hf-fill" data-anim="fade-up" data-anim-at="0.45">
+                  <span class="hf-label">Settings</span>
+                  <div class="hf-settings">
+                    <div class="hf-settings__row">
+                      <div>
+                        <span class="hf-settings__name">Store availability</span>
+                        <span class="hf-settings__hint">Show stock on product pages</span>
+                      </div>
+                      <span class="hf-toggle" data-on></span>
+                    </div>
+                    <div class="hf-settings__row">
+                      <div>
+                        <span class="hf-settings__name">Order updates</span>
+                        <span class="hf-settings__hint">Email customers on fulfilment</span>
+                      </div>
+                      <span class="hf-toggle" data-on></span>
+                    </div>
+                    <div class="hf-settings__row">
+                      <div>
+                        <span class="hf-settings__name">Product reviews</span>
+                        <span class="hf-settings__hint">Collect ratings after delivery</span>
+                      </div>
+                      <span class="hf-toggle"></span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Storefront · 08</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("storefront");
+      </script>
+    </template>
+  </body>
+</html>

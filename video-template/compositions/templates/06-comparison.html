@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="t-compare"
+        data-width="1920"
+        data-height="1080"
+        data-duration="6"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Comparison</p>
+            <h1 class="hf-h1">Same products, new frame</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              A theme change is easier to see when the product stays the same.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-ba hf-fill" data-anim="fade-up" data-anim-at="0.2">
+              <div class="hf-ba__panel" data-tone="before">
+                <span class="hf-ba__tag">Before</span>
+                <div class="hf-stack hf-fill" style="justify-content: center">
+                  <div class="hf-product-grid" style="gap: 12px">
+                  <div class="hf-product hf-product--wide">
+                    <div class="hf-product__media">
+                      <svg class="hf-icon"><use href="assets/icons.svg#tag" /></svg>
+                    </div>
+                    <div class="hf-product__row">
+                      <span class="hf-product__name">Shirt</span>
+                      <span class="hf-product__price hf-num">$68</span>
+                    </div>
+                  </div>
+                  <div class="hf-product hf-product--wide">
+                    <div class="hf-product__media">
+                      <svg class="hf-icon"><use href="assets/icons.svg#box" /></svg>
+                    </div>
+                    <div class="hf-product__row">
+                      <span class="hf-product__name">Mug</span>
+                      <span class="hf-product__price hf-num">$32</span>
+                    </div>
+                  </div>
+                  <div class="hf-product hf-product--wide">
+                    <div class="hf-product__media">
+                      <svg class="hf-icon"><use href="assets/icons.svg#bag" /></svg>
+                    </div>
+                    <div class="hf-product__row">
+                      <span class="hf-product__name">Tote</span>
+                      <span class="hf-product__price hf-num">$48</span>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <span class="hf-small hf-muted">Default template, no sections</span>
+              </div>
+
+              <div class="hf-ba__panel" data-tone="after">
+                <span class="hf-ba__tag">After</span>
+                <div class="hf-card hf-card--tight">
+                  <div class="hf-row hf-row--between">
+                    <div class="hf-stack hf-stack--tight">
+                      <span class="hf-label hf-lime">New season</span>
+                      <h3 class="hf-h4">Made for slow mornings</h3>
+                    </div>
+                    <span class="hf-btn">Shop the collection</span>
+                  </div>
+                </div>
+                <div class="hf-stack hf-fill" style="justify-content: center">
+                  <div class="hf-product-grid" style="gap: 12px">
+                  <div class="hf-product hf-product--wide">
+                    <div class="hf-product__media">
+                      <svg class="hf-icon"><use href="assets/icons.svg#tag" /></svg>
+                    </div>
+                    <div class="hf-product__row">
+                      <span class="hf-product__name">Shirt</span>
+                      <span class="hf-product__price hf-num">$68</span>
+                    </div>
+                  </div>
+                  <div class="hf-product hf-product--wide">
+                    <div class="hf-product__media">
+                      <svg class="hf-icon"><use href="assets/icons.svg#box" /></svg>
+                    </div>
+                    <div class="hf-product__row">
+                      <span class="hf-product__name">Mug</span>
+                      <span class="hf-product__price hf-num">$32</span>
+                    </div>
+                  </div>
+                  <div class="hf-product hf-product--wide">
+                    <div class="hf-product__media">
+                      <svg class="hf-icon"><use href="assets/icons.svg#bag" /></svg>
+                    </div>
+                    <div class="hf-product__row">
+                      <span class="hf-product__name">Tote</span>
+                      <span class="hf-product__price hf-num">$48</span>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <span class="hf-small hf-muted">Hero, proof and product row</span>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Comparison</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("t-compare");
+      </script>
+    </template>
+  </body>
+</html>

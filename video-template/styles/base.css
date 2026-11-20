@@ -1,0 +1,440 @@
+/* ==========================================================================
+   Base: reset, scene shell, type scale, layout primitives, card surface
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: var(--hf-w);
+  height: var(--hf-h);
+  overflow: hidden;
+  background: var(--hf-ink);
+}
+
+/* --- Scene shell ------------------------------------------------------- */
+
+.hf-scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hf-s7);
+  padding: var(--hf-safe-top) var(--hf-safe-x) var(--hf-safe-bottom);
+  overflow: hidden;
+  background: radial-gradient(
+      ellipse 90% 65% at 50% -10%,
+      #111315 0%,
+      var(--hf-ink) 62%
+    ),
+    var(--hf-ink);
+  color: var(--hf-text);
+  font-family: var(--hf-font);
+  font-size: var(--hf-body);
+  line-height: var(--hf-lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.hf-scene--center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Ambient texture — decorative, never on top of text */
+.hf-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 42%,
+    #000 8%,
+    transparent 76%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 42%,
+    #000 8%,
+    transparent 76%
+  );
+}
+
+.hf-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, var(--hf-glow), transparent 62%);
+}
+
+.hf-glow--soft {
+  background: radial-gradient(circle, var(--hf-glow-soft), transparent 64%);
+}
+
+/* --- Type scale -------------------------------------------------------- */
+
+.hf-display,
+.hf-h1,
+.hf-h2,
+.hf-h3,
+.hf-h4 {
+  font-weight: 600;
+  color: var(--hf-text);
+  text-wrap: balance;
+}
+
+.hf-display {
+  font-size: var(--hf-display);
+  line-height: var(--hf-lh-tight);
+  letter-spacing: var(--hf-track-display);
+}
+
+.hf-h1 {
+  font-size: var(--hf-h1);
+  line-height: var(--hf-lh-heading);
+  letter-spacing: var(--hf-track-h1);
+}
+
+.hf-h2 {
+  font-size: var(--hf-h2);
+  line-height: var(--hf-lh-heading);
+  letter-spacing: var(--hf-track-h2);
+}
+
+.hf-h3 {
+  font-size: var(--hf-h3);
+  line-height: 1.15;
+  letter-spacing: var(--hf-track-h3);
+}
+
+.hf-h4 {
+  font-size: var(--hf-h4);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.hf-body-lg {
+  font-size: var(--hf-body-lg);
+  line-height: var(--hf-lh-body);
+}
+
+.hf-body {
+  font-size: var(--hf-body);
+  line-height: var(--hf-lh-body);
+}
+
+.hf-small {
+  font-size: var(--hf-small);
+  line-height: 1.45;
+}
+
+.hf-label {
+  font-size: var(--hf-label);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: var(--hf-track-label);
+  text-transform: uppercase;
+  color: var(--hf-lime);
+}
+
+.hf-muted {
+  color: var(--hf-muted);
+}
+
+.hf-lime {
+  color: var(--hf-lime);
+}
+
+.hf-soft {
+  color: var(--hf-lime-soft);
+}
+
+.hf-num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.hf-measure {
+  max-width: 1100px;
+}
+
+/* --- Header ------------------------------------------------------------ */
+
+.hf-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hf-s3);
+  flex: none;
+}
+
+.hf-header .hf-label {
+  margin-bottom: var(--hf-s1);
+}
+
+.hf-header__sub {
+  max-width: 1180px;
+  color: var(--hf-muted);
+}
+
+/* --- Body / footer ----------------------------------------------------- */
+
+.hf-main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hf-gap);
+}
+
+.hf-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--hf-s5);
+  flex: none;
+  color: var(--hf-muted);
+  font-size: var(--hf-label);
+  letter-spacing: 0.04em;
+}
+
+/* --- Layout primitives ------------------------------------------------- */
+
+.hf-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hf-s4);
+  min-height: 0;
+}
+
+.hf-stack--tight {
+  gap: var(--hf-s2);
+}
+
+.hf-stack--loose {
+  gap: var(--hf-s6);
+}
+
+.hf-row {
+  display: flex;
+  align-items: center;
+  gap: var(--hf-s4);
+  min-width: 0;
+}
+
+.hf-row--between {
+  justify-content: space-between;
+}
+
+.hf-row--baseline {
+  align-items: baseline;
+}
+
+.hf-fill {
+  flex: 1;
+  min-height: 0;
+}
+
+.hf-grid {
+  display: grid;
+  gap: var(--hf-gap);
+  min-height: 0;
+}
+
+.hf-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hf-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hf-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hf-grid--5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* Bento: a 4-column bed. Children opt into spans. */
+.hf-bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  gap: var(--hf-gap);
+  min-height: 0;
+}
+
+.hf-span-2 {
+  grid-column: span 2;
+}
+
+.hf-span-3 {
+  grid-column: span 3;
+}
+
+.hf-span-4 {
+  grid-column: span 4;
+}
+
+.hf-tall {
+  grid-row: span 2;
+}
+
+.hf-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--hf-gap-lg);
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+}
+
+.hf-split--wide-left {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+.hf-split--wide-right {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.hf-split--top {
+  align-items: start;
+}
+
+.hf-split--stretch {
+  align-items: stretch;
+}
+
+.hf-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+/* --- Card -------------------------------------------------------------- */
+
+.hf-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hf-s4);
+  min-width: 0;
+  padding: var(--hf-card-pad);
+  background: linear-gradient(180deg, var(--hf-surface-2), var(--hf-surface));
+  border: 1px solid var(--hf-line);
+  border-radius: var(--hf-r-xl);
+  box-shadow: var(--hf-shadow-card);
+}
+
+.hf-card--flat {
+  background: var(--hf-surface);
+}
+
+.hf-card--ghost {
+  background: transparent;
+  box-shadow: none;
+}
+
+.hf-card--accent {
+  border-color: rgba(149, 191, 71, 0.28);
+  box-shadow: var(--hf-shadow-card), var(--hf-shadow-glow);
+}
+
+.hf-card--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.hf-card--tight {
+  padding: 28px 32px;
+}
+
+.hf-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--hf-s3);
+}
+
+.hf-card__body {
+  color: var(--hf-muted);
+  font-size: var(--hf-small);
+  line-height: 1.5;
+}
+
+/* --- Chips and status pills ------------------------------------------- */
+
+.hf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hf-s2);
+  flex: none;
+  padding: 6px 16px;
+  border: 1px solid var(--hf-line);
+  border-radius: var(--hf-r-pill);
+  background: var(--hf-surface-2);
+  color: var(--hf-muted);
+  font-size: var(--hf-label);
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.hf-chip--lime {
+  border-color: rgba(149, 191, 71, 0.3);
+  background: var(--hf-tip-bg);
+  color: var(--hf-lime-soft);
+}
+
+.hf-chip--warning {
+  border-color: rgba(224, 164, 88, 0.3);
+  background: var(--hf-warning-bg);
+  color: var(--hf-warning);
+}
+
+.hf-chip--danger {
+  border-color: rgba(217, 115, 107, 0.3);
+  background: var(--hf-danger-bg);
+  color: var(--hf-danger);
+}
+
+.hf-chip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+/* --- Rules ------------------------------------------------------------- */
+
+.hf-rule {
+  height: 1px;
+  width: 100%;
+  background: var(--hf-line);
+  border: 0;
+  flex: none;
+}
+
+/* Neutral wireframe filler for layout demos */
+.hf-mock {
+  background: var(--hf-surface-3);
+  border: 1px solid var(--hf-line);
+  border-radius: var(--hf-r-md);
+}
+
+.hf-mock--lime {
+  background: var(--hf-tip-bg);
+  border-color: rgba(149, 191, 71, 0.25);
+}

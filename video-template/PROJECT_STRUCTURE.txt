@@ -1,11 +1,41 @@
 video-template/
-├── BRAND_GUIDELINES.md                  # Channel design specification (Signal Editorial)
-├── frame.md                             # Authoritative frame specification
+├── DESIGN.md                            # Design system spec — start here
 ├── PROJECT_STRUCTURE.txt                # This architecture map
-├── transcript.srt                       # Source Voceover transcript with timestamps
-├── index.html                           # Root master composition (54.0s @ 1080x1920)
+├── index.html                           # Root showcase composition (144s, 1920x1080)
+├── hyperframes.json                     # HyperFrames project paths
+├── meta.json                            # Project metadata
+├── package.json                         # Pinned CLI scripts: dev, lint, check, snapshot, render, audit
 ├── styles/
-│   └── signal-editorial.css             # Shared Signal Editorial design tokens & layout rules
+│   ├── tokens.css                       # Colour, type, space, radius, motion tokens
+│   ├── base.css                         # Reset, scene shell, type scale, layout, cards
+│   └── components.css                   # Component library
+├── scripts/
+│   ├── hf-motion.js                     # data-anim → paused GSAP timeline
+│   └── audit-design.mjs                 # Design guard: raw colours, fonts, CSS motion
+├── assets/
+│   ├── icons.svg                        # Line-icon sprite (24px grid, 1.6 stroke)
+│   └── fonts/inter-var.woff2            # Bundled Inter variable font
 └── compositions/
-  
-  
+    ├── showcase/                        # Nine component chapters (10s each)
+    │   ├── 01-foundations.html
+    │   ├── 02-layout.html
+    │   ├── 03-education.html
+    │   ├── 04-flows.html
+    │   ├── 05-compare.html
+    │   ├── 06-data.html
+    │   ├── 07-admin.html
+    │   ├── 08-storefront.html
+    │   └── 09-motion.html
+    └── templates/                       # Nine copy-ready scene templates (6s each)
+        ├── 01-intro.html
+        ├── 02-concept.html
+        ├── 03-steps.html
+        ├── 04-problem-solution.html
+        ├── 05-features.html
+        ├── 06-comparison.html
+        ├── 07-workflow.html
+        ├── 08-stats.html
+        └── 09-summary.html
+
+Generated at render/check time (not source):
+  .hyperframes/                           # Snapshots, check reports, caches

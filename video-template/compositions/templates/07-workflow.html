@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="t-workflow"
+        data-width="1920"
+        data-height="1080"
+        data-duration="6"
+      >
+        <div class="hf-scene">
+          <div class="hf-dots"></div>
+
+          <header class="hf-header">
+            <p class="hf-label">Workflow</p>
+            <h1 class="hf-h1">From draft to delivered</h1>
+            <p class="hf-body-lg hf-muted hf-header__sub">
+              One row, four states. The viewer always knows what happens next.
+            </p>
+          </header>
+
+          <div class="hf-main">
+            <div class="hf-card hf-card--flat" data-anim="fade-down" data-anim-at="0.15">
+              <div class="hf-flow">
+                <div class="hf-flow__node">
+                  <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#plus" /></svg></span>
+                  <span class="hf-flow__label">Draft</span>
+                  <span class="hf-flow__meta">Product created</span>
+                </div>
+                <span class="hf-flow__link" data-anim="grow-x" data-anim-at="0.4"></span>
+                <div class="hf-flow__node">
+                  <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#card" /></svg></span>
+                  <span class="hf-flow__label">Paid</span>
+                  <span class="hf-flow__meta">Checkout complete</span>
+                </div>
+                <span class="hf-flow__link" data-anim="grow-x" data-anim-at="0.55"></span>
+                <div class="hf-flow__node">
+                  <span class="hf-icon-badge hf-icon-badge--sm"><svg class="hf-icon"><use href="assets/icons.svg#box" /></svg></span>
+                  <span class="hf-flow__label">Packed</span>
+                  <span class="hf-flow__meta">Label printed</span>
+                </div>
+                <span class="hf-flow__link" data-anim="grow-x" data-anim-at="0.7"></span>
+                <div class="hf-flow__node">
+                  <span class="hf-icon-badge hf-icon-badge--sm hf-icon-badge--accent"><svg class="hf-icon"><use href="assets/icons.svg#truck" /></svg></span>
+                  <span class="hf-flow__label">Delivered</span>
+                  <span class="hf-flow__meta">Customer notified</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hf-grid hf-grid--3">
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.45">
+                <span class="hf-label">1 · Draft</span>
+                <p class="hf-small hf-muted">
+                  Product is created but hidden from the storefront.
+                </p>
+              </div>
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.55">
+                <span class="hf-label">2 · Paid</span>
+                <p class="hf-small hf-muted">
+                  Payment clears and the order appears in the admin.
+                </p>
+              </div>
+              <div class="hf-card" data-anim="fade-up" data-anim-at="0.65">
+                <span class="hf-label">3 · Delivered</span>
+                <p class="hf-small hf-muted">
+                  Tracking updates and the customer gets one email.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <footer class="hf-footer">
+            <span>Learn Shopify Today</span>
+            <span>Workflow</span>
+          </footer>
+        </div>
+      </div>
+
+      <script src="scripts/hf-motion.js"></script>
+      <script>
+        HF.register("t-workflow");
+      </script>
+    </template>
+  </body>
+</html>
