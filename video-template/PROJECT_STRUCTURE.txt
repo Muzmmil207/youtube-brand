@@ -11,10 +11,12 @@ video-template/
 │   └── components.css                   # Component library
 ├── scripts/
 │   ├── hf-motion.js                     # data-anim → paused GSAP timeline
-│   └── audit-design.mjs                 # Design guard: raw colours, fonts, CSS motion
+│   ├── audit-design.mjs                 # Design guard: raw colours, fonts, CSS motion
+│   └── make-sfx.sh                      # Regenerates assets/sfx from filtered noise
 ├── assets/
 │   ├── icons.svg                        # Line-icon sprite (24px grid, 1.6 stroke)
-│   └── fonts/inter-var.woff2            # Bundled Inter variable font
+│   ├── fonts/inter-var.woff2            # Bundled Inter variable font
+│   └── sfx/                             # Interface foley (11 WAV cues, 48k mono)
 └── compositions/
     ├── showcase/                        # Nine component chapters (10s each)
     │   ├── 01-foundations.html

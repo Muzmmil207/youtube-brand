@@ -43,6 +43,8 @@ Read this section before writing a single line of HTML.
     and storefront components are illustrative, built from tokens.
 12. **Leave the system better documented.** New component or new pattern: add it
     to this file and to the showcase in the same change.
+13. **Sound comes from `assets/sfx/` only.** Use the existing cues, one per beat,
+    on the rules in §14. No music, no chimes, no downloaded stingers.
 
 ---
 
@@ -1089,3 +1091,60 @@ rendered is not finished.
 - Shopify disclaimer: this is an independent educational channel. The admin and
   storefront components are illustrative and must not be presented as official
   Shopify UI.
+
+---
+
+## 14. Sound effects
+
+The template ships a small interface foley set in `assets/sfx/`. It is generated
+from filtered noise by `scripts/make-sfx.sh`: no sampled library, no licence to
+clear, and no melodic tones, chimes or dings. Re-run the script after editing a
+recipe; every file is deterministic.
+
+| File | Use it for | Length |
+|---|---|---|
+| `click.wav` | a real cursor click | 50 ms |
+| `tap.wav` | a button press or a step activating | 70 ms |
+| `toggle.wav` | a switch changing state | 100 ms |
+| `pop.wav` | a chip, badge or number landing | 90 ms |
+| `tick.wav` | text arriving, counter steps | 20 ms |
+| `tick-soft.wav` | the same, quieter — rotate the two | 20 ms |
+| `swipe.wav` | horizontal motion, a slide | 240 ms |
+| `whoosh-short.wav` | a scene cut | 380 ms |
+| `whoosh-long.wav` | a large transition or a card crossing frame | 750 ms |
+| `draw.wav` | a line, connector or chart drawing | 500 ms |
+| `thud.wav` | a card or panel landing | 160 ms |
+
+### Mounting a cue
+
+```html
+<audio
+  id="sfx-click-1"
+  class="clip"
+  src="assets/sfx/click.wav"
+  data-start="2.4"
+  data-duration="0.05"
+  data-track-index="1"
+  data-volume="0.7"
+></audio>
+```
+
+- Effects go on `data-track-index="1"`; picture clips stay on `0`.
+- `data-start` is local to the composition, like every other clip. A cue
+  belongs to the scene that causes it, not to the root film.
+- Every `<audio>` needs a unique `id`.
+- The audible peak lands 10–120 ms after the file starts, so start the clip on
+  the frame where the action happens. `npx hyperframes audio <file> --json`
+  reports the peak and loudness of any file you add.
+- The files peak at −6 dBFS and sit near −17 dB RMS; `data-volume` 0.5–0.8 is
+  the working range for one-shots.
+
+### When to use one
+
+- One cue per beat. Three in a 10 s scene is already busy.
+- Only on a visible action: a click, a cut, a card landing, a number finishing.
+- Rotate `tick` and `tick-soft` so repeated hits do not sound copied.
+- The template has no music bed. Add one in the edit and keep hits 3–6 dB over
+  it; `npm run check` reports `film_silent` until a bed exists.
+- No chimes, dings or melodic stingers. If you can hum the pitch, it does not
+  belong in this system.
