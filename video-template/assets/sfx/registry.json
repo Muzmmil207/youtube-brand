@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "source": {
+    "name": "SFX Kit",
+    "author": "Wyzowl",
+    "version": "1.0.0",
+    "url": "https://github.com/wyzowl/sfx-kit",
+    "license": "CC0-1.0",
+    "licenseFile": "assets/sfx/LICENSE"
+  },
+  "usage": {
+    "trackIndex": 1,
+    "startFormula": "data-start = eventTime - sync.at",
+    "volumeReference": "data-volume 1 = 0 dB; the kit is loudness-matched as shipped",
+    "underVoiceoverFormula": "data-volume = recommendedVolume * 10^(underVoiceoverDb / 20)"
+  },
+  "cues": {
+    "click": {
+      "file": "assets/sfx/click.wav",
+      "sourceId": "click-mouse-medium",
+      "sourceFile": "sounds/interface/click-mouse-medium.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/interface/click-mouse-medium.wav",
+      "duration": 0.092,
+      "channels": 1,
+      "sync": {
+        "at": 0.009,
+        "meets": "instant"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.009,
+        "bodyEnd": 0.088,
+        "audibleEnd": 0.091
+      },
+      "level": {
+        "lufs": -27,
+        "truePeakDbtp": -8.7
+      },
+      "underVoiceoverDb": -1,
+      "recommendedVolume": 1,
+      "useFor": [
+        "Mouse clicks in software demos",
+        "A cursor clicking a link or button",
+        "Selecting text or an item"
+      ],
+      "avoidFor": [
+        "Very quiet, delicate moments (use soft)",
+        "Touchscreen taps (use tap)"
+      ],
+      "trigger": "A cursor presses a link, button or menu item in a software demo.",
+      "animationEvents": [
+        "a cursor animation reaches its target",
+        "a button or link is pressed"
+      ],
+      "sha256": "e2f90638293c1f03d1c50620c9a8e364a6148a5d03531a667d7f8bee3f5fb13b"
+    },
+    "draw": {
+      "file": "assets/sfx/draw.wav",
+      "sourceId": "writing-marker-draw",
+      "sourceFile": "sounds/writing-and-drawing/writing-marker-draw.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/writing-and-drawing/writing-marker-draw.wav",
+      "duration": 1.063,
+      "channels": 1,
+      "sync": {
+        "at": 0,
+        "meets": "action-start"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.81,
+        "bodyEnd": 1.012,
+        "audibleEnd": 1.052
+      },
+      "level": {
+        "lufs": -25,
+        "truePeakDbtp": -19.6
+      },
+      "underVoiceoverDb": -1,
+      "recommendedVolume": 1,
+      "useFor": [
+        "Lines, arrows, shapes and diagrams being drawn",
+        "Whiteboard animations",
+        "Sketching an idea"
+      ],
+      "avoidFor": [
+        "Typed text (use keyboard)",
+        "Loud moments: it's a quiet, close sound"
+      ],
+      "trigger": "A line, connector, arrow or chart path starts drawing.",
+      "animationEvents": [
+        "data-anim=\"draw\" starts",
+        "a connector with data-anim=\"grow-x\" starts"
+      ],
+      "sha256": "928249d92b7c4ecfc8d5f3883afd22d54c3b34bad17a1e59ce76676ce41da69d"
+    },
+    "pop": {
+      "file": "assets/sfx/pop.wav",
+      "sourceId": "pop-medium-in",
+      "sourceFile": "sounds/pops/pop-medium-in.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/pops/pop-medium-in.wav",
+      "duration": 0.06,
+      "channels": 1,
+      "sync": {
+        "at": 0.011,
+        "meets": "instant"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.011,
+        "bodyEnd": 0.034,
+        "audibleEnd": 0.057
+      },
+      "level": {
+        "lufs": -22.5,
+        "truePeakDbtp": -6.5
+      },
+      "underVoiceoverDb": -2,
+      "recommendedVolume": 1,
+      "useFor": [
+        "Elements appearing or scaling up into view",
+        "Icons, badges and stickers popping in",
+        "Points on a chart appearing",
+        "Cards, buttons and labels"
+      ],
+      "avoidFor": [
+        "Things leaving the screen (use pop out)"
+      ],
+      "trigger": "A chip, badge, card, icon or number reaches full size.",
+      "animationEvents": [
+        "data-anim=\"scale-in\" lands",
+        "data-anim=\"fade-up\" lands on a chip or badge"
+      ],
+      "sha256": "0c92cb9be01b1b5a3b51d4a6bfe427947b228ea71bb95d5a0b6c8641b7eab511"
+    },
+    "swipe": {
+      "file": "assets/sfx/swipe.wav",
+      "sourceId": "swipe-medium-firm",
+      "sourceFile": "sounds/swipes/swipe-medium-firm.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/swipes/swipe-medium-firm.wav",
+      "duration": 0.279,
+      "channels": 1,
+      "sync": {
+        "at": 0,
+        "meets": "action-start"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.069,
+        "bodyEnd": 0.237,
+        "audibleEnd": 0.27
+      },
+      "level": {
+        "lufs": -24.5,
+        "truePeakDbtp": -12.2
+      },
+      "underVoiceoverDb": -1,
+      "recommendedVolume": 1,
+      "useFor": [
+        "Swiping a card across in an app demo",
+        "Moving between tabs or pages",
+        "Swipe-to-unlock and swipe-to-confirm"
+      ],
+      "avoidFor": [
+        "Objects flying through the air (use a whoosh or swish)",
+        "Very quiet, delicate scenes"
+      ],
+      "trigger": "A finger or card starts swiping across the screen.",
+      "animationEvents": [
+        "a card or tab swipe begins",
+        "data-anim=\"slide-left\" or \"slide-right\" starts"
+      ],
+      "sha256": "e446cca2958bba55429d66dbfb7397bd1b448a16fa313ecc1a546f45a6385518"
+    },
+    "tap": {
+      "file": "assets/sfx/tap.wav",
+      "sourceId": "click-tap-medium",
+      "sourceFile": "sounds/interface/click-tap-medium.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/interface/click-tap-medium.wav",
+      "duration": 0.022,
+      "channels": 1,
+      "sync": {
+        "at": 0.009,
+        "meets": "instant"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.009,
+        "bodyEnd": 0.016,
+        "audibleEnd": 0.021
+      },
+      "level": {
+        "lufs": -27,
+        "truePeakDbtp": -6.6
+      },
+      "underVoiceoverDb": -1,
+      "recommendedVolume": 1,
+      "useFor": [
+        "Touchscreen taps in app demos",
+        "A finger tapping a card or tile",
+        "Selecting an item on a phone screen"
+      ],
+      "avoidFor": [
+        "Very quiet, delicate moments (use soft)",
+        "Mouse clicks (use mouse)"
+      ],
+      "trigger": "A touchscreen button, card or tile is pressed.",
+      "animationEvents": [
+        "a tap target is pressed",
+        "a step becomes active"
+      ],
+      "sha256": "d9354a3293aa0dca0fd9824a830f593a154535e829317b16ce5cd4256a61ec0a"
+    },
+    "thud": {
+      "file": "assets/sfx/thud.wav",
+      "sourceId": "impact-medium-soft",
+      "sourceFile": "sounds/impacts/impact-medium-soft.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/impacts/impact-medium-soft.wav",
+      "duration": 0.21,
+      "channels": 1,
+      "sync": {
+        "at": 0.013,
+        "meets": "instant"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.013,
+        "bodyEnd": 0.091,
+        "audibleEnd": 0.171
+      },
+      "level": {
+        "lufs": -22,
+        "truePeakDbtp": -8.2
+      },
+      "underVoiceoverDb": -3,
+      "recommendedVolume": 0.9,
+      "useFor": [
+        "Cards and panels landing",
+        "Objects dropping into frame",
+        "A title setting into place",
+        "Gentle, friendly landings"
+      ],
+      "avoidFor": [
+        "Tiny details",
+        "Moments that need a crisp edge"
+      ],
+      "trigger": "A card, panel or window lands and settles.",
+      "animationEvents": [
+        "a card or panel finishes data-anim=\"fade-up\"",
+        "a window opens or lands"
+      ],
+      "sha256": "88fa4920ffef8f6295df929e9f0d671fafdfb6f9d5a7f82840b755adf9fb7d7f"
+    },
+    "tick": {
+      "file": "assets/sfx/tick.wav",
+      "sourceId": "click-hover-medium",
+      "sourceFile": "sounds/interface/click-hover-medium.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/interface/click-hover-medium.wav",
+      "duration": 0.014,
+      "channels": 1,
+      "sync": {
+        "at": 0.008,
+        "meets": "instant"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.008,
+        "bodyEnd": 0.012,
+        "audibleEnd": 0.014
+      },
+      "level": {
+        "lufs": -30,
+        "truePeakDbtp": -7.5
+      },
+      "underVoiceoverDb": -1,
+      "recommendedVolume": 1,
+      "useFor": [
+        "A cursor moving over buttons, links or menu items",
+        "A highlight stepping through a list",
+        "Scrolling past items, one tick each"
+      ],
+      "avoidFor": [
+        "Very quiet, delicate moments (use soft)",
+        "Clicks and presses (use button, tap or mouse)"
+      ],
+      "trigger": "A line of text or a highlight steps to the next item.",
+      "animationEvents": [
+        "each list item or text line appears",
+        "a highlight moves one step"
+      ],
+      "sha256": "b45ea8ca25527930f707e3e6b06efcae39535267877f32dd69379f43efacb604"
+    },
+    "tick-soft": {
+      "file": "assets/sfx/tick-soft.wav",
+      "sourceId": "click-hover-soft",
+      "sourceFile": "sounds/interface/click-hover-soft.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/interface/click-hover-soft.wav",
+      "duration": 0.014,
+      "channels": 1,
+      "sync": {
+        "at": 0.007,
+        "meets": "instant"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.007,
+        "bodyEnd": 0.012,
+        "audibleEnd": 0.013
+      },
+      "level": {
+        "lufs": -32,
+        "truePeakDbtp": -10.3
+      },
+      "underVoiceoverDb": -1,
+      "recommendedVolume": 1,
+      "useFor": [
+        "A cursor moving over buttons, links or menu items",
+        "A highlight stepping through a list",
+        "Scrolling past items, one tick each"
+      ],
+      "avoidFor": [
+        "Moments that need to be noticed over music",
+        "Clicks and presses (use button, tap or mouse)"
+      ],
+      "trigger": "A secondary line of text or a quieter highlight step.",
+      "animationEvents": [
+        "secondary labels appear",
+        "rotate with tick for repeated hits"
+      ],
+      "sha256": "6f58da1b9d8e958f24b5b8f653b9f159c2f0c7497c3c0cd54d317234b6108b54"
+    },
+    "toggle": {
+      "file": "assets/sfx/toggle.wav",
+      "sourceId": "click-toggle-medium",
+      "sourceFile": "sounds/interface/click-toggle-medium.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/interface/click-toggle-medium.wav",
+      "duration": 0.042,
+      "channels": 1,
+      "sync": {
+        "at": 0.031,
+        "meets": "instant"
+      },
+      "timing": {
+        "onset": 0,
+        "peak": 0.031,
+        "bodyEnd": 0.038,
+        "audibleEnd": 0.042
+      },
+      "level": {
+        "lufs": -27,
+        "truePeakDbtp": -11.4
+      },
+      "underVoiceoverDb": -1,
+      "recommendedVolume": 1,
+      "useFor": [
+        "Switching a setting on or off",
+        "Checkboxes and switches",
+        "Changing a mode"
+      ],
+      "avoidFor": [
+        "Very quiet, delicate moments (use soft)"
+      ],
+      "trigger": "A setting, checkbox or switch changes state.",
+      "animationEvents": [
+        "a toggle flips",
+        "a settings row activates"
+      ],
+      "sha256": "2497715eef6d9e300f0149c25ff478ffd9d3cd7201fb7199312441051f2e68fb"
+    },
+    "whoosh-long": {
+      "file": "assets/sfx/whoosh-long.wav",
+      "sourceId": "whoosh-slow-medium",
+      "sourceFile": "sounds/whooshes/whoosh-slow-medium.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/whooshes/whoosh-slow-medium.wav",
+      "duration": 1.002,
+      "channels": 2,
+      "sync": {
+        "at": 0.438,
+        "meets": "move-peak"
+      },
+      "timing": {
+        "onset": 0.24,
+        "peak": 0.438,
+        "bodyEnd": 0.688,
+        "audibleEnd": 0.943
+      },
+      "level": {
+        "lufs": -20.5,
+        "truePeakDbtp": -10.8
+      },
+      "underVoiceoverDb": -3,
+      "recommendedVolume": 0.8,
+      "useFor": [
+        "Large panels or maps sliding",
+        "Slow pans across a scene",
+        "Deliberate reveals"
+      ],
+      "avoidFor": [
+        "Fast cuts",
+        "Small UI elements"
+      ],
+      "trigger": "A large panel, map or section moves, or a long transition begins.",
+      "animationEvents": [
+        "a large panel or map slides",
+        "a scene-to-scene transition starts",
+        "a slow camera push begins"
+      ],
+      "sha256": "abf3f8250bee145041d0d6786f34a5cbbfe14d4e9526e3395fc5a162a39808a9"
+    },
+    "whoosh-short": {
+      "file": "assets/sfx/whoosh-short.wav",
+      "sourceId": "whoosh-medium-soft",
+      "sourceFile": "sounds/whooshes/whoosh-medium-soft.wav",
+      "sourceUrl": "https://github.com/wyzowl/sfx-kit/blob/main/sounds/whooshes/whoosh-medium-soft.wav",
+      "duration": 0.543,
+      "channels": 2,
+      "sync": {
+        "at": 0.229,
+        "meets": "move-peak"
+      },
+      "timing": {
+        "onset": 0.1,
+        "peak": 0.229,
+        "bodyEnd": 0.375,
+        "audibleEnd": 0.506
+      },
+      "level": {
+        "lufs": -24,
+        "truePeakDbtp": -15.2
+      },
+      "underVoiceoverDb": -2,
+      "recommendedVolume": 1,
+      "useFor": [
+        "Panels sliding in",
+        "Gentle card reveals",
+        "Backgrounds shifting",
+        "Calm transitions between explainer scenes"
+      ],
+      "avoidFor": [
+        "Snappy, quick moves",
+        "Energetic edits"
+      ],
+      "trigger": "A scene cut, or a panel sliding in.",
+      "animationEvents": [
+        "a scene cut",
+        "a panel slides in",
+        "a card crosses the frame"
+      ],
+      "sha256": "a114611a09e02ab26cfbd8d796279eac358b6df4c3923db3f269ac34c340eeac"
+    }
+  }
+}

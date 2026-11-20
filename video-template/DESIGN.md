@@ -1096,24 +1096,25 @@ rendered is not finished.
 
 ## 14. Sound effects
 
-The template ships a small interface foley set in `assets/sfx/`. It is generated
-from filtered noise by `scripts/make-sfx.sh`: no sampled library, no licence to
-clear, and no melodic tones, chimes or dings. Re-run the script after editing a
-recipe; every file is deterministic.
+The sound library lives in `assets/sfx/` and is built from Wyzowl's SFX Kit
+(v1.0.0, CC0 1.0): 320 original, synthesised sounds licensed for any use,
+commercial or not, with no credit required. Only the 11 cues below are bundled
+(about 716 KB), not the whole 67 MB kit. Their exact source files, durations,
+sync points and levels are recorded in `assets/sfx/registry.json`.
 
-| File | Use it for | Length |
-|---|---|---|
-| `click.wav` | a real cursor click | 50 ms |
-| `tap.wav` | a button press or a step activating | 70 ms |
-| `toggle.wav` | a switch changing state | 100 ms |
-| `pop.wav` | a chip, badge or number landing | 90 ms |
-| `tick.wav` | text arriving, counter steps | 20 ms |
-| `tick-soft.wav` | the same, quieter — rotate the two | 20 ms |
-| `swipe.wav` | horizontal motion, a slide | 240 ms |
-| `whoosh-short.wav` | a scene cut | 380 ms |
-| `whoosh-long.wav` | a large transition or a card crossing frame | 750 ms |
-| `draw.wav` | a line, connector or chart drawing | 500 ms |
-| `thud.wav` | a card or panel landing | 160 ms |
+| File | Source (SFX Kit) | Use it for | Length | Sync point | Recommended volume |
+|---|---|---|---|---|---|
+| `click.wav` | `click-mouse-medium` | A cursor presses a link, button or menu item in a software demo | 92 ms | 9 ms (instant: the press) | 1.0 |
+| `tap.wav` | `click-tap-medium` | A touchscreen button, card or tile is pressed | 22 ms | 9 ms (instant: the press lands) | 1.0 |
+| `toggle.wav` | `click-toggle-medium` | A setting, checkbox or switch changes state | 42 ms | 31 ms (instant: the snap home) | 1.0 |
+| `pop.wav` | `pop-medium-in` | A chip, badge, card, icon or number reaches full size | 60 ms | 11 ms (instant: full size) | 1.0 |
+| `tick.wav` | `click-hover-medium` | A line of text or a highlight steps to the next item | 14 ms | 8 ms (instant) | 1.0 |
+| `tick-soft.wav` | `click-hover-soft` | A secondary line or quieter highlight step; rotate with `tick` | 14 ms | 7 ms (instant) | 1.0 |
+| `swipe.wav` | `swipe-medium-firm` | A finger or card swipes across the screen | 279 ms | 0 ms (action-start: as it starts) | 1.0 |
+| `thud.wav` | `impact-medium-soft` | A card, panel or window lands and settles | 210 ms | 13 ms (instant: contact) | 0.9 |
+| `draw.wav` | `writing-marker-draw` | A line, connector, arrow or chart path starts drawing | 1063 ms | 0 ms (action-start: as it starts) | 1.0 |
+| `whoosh-short.wav` | `whoosh-medium-soft` | A scene cut, or a panel sliding in | 543 ms | 229 ms (move-peak) | 1.0 |
+| `whoosh-long.wav` | `whoosh-slow-medium` | A large panel, map, or a long transition | 1002 ms | 438 ms (move-peak) | 0.8 |
 
 ### Mounting a cue
 
@@ -1122,10 +1123,10 @@ recipe; every file is deterministic.
   id="sfx-click-1"
   class="clip"
   src="assets/sfx/click.wav"
-  data-start="2.4"
-  data-duration="0.05"
+  data-start="2.391"
+  data-duration="0.092"
   data-track-index="1"
-  data-volume="0.7"
+  data-volume="1.00"
 ></audio>
 ```
 
@@ -1133,18 +1134,155 @@ recipe; every file is deterministic.
 - `data-start` is local to the composition, like every other clip. A cue
   belongs to the scene that causes it, not to the root film.
 - Every `<audio>` needs a unique `id`.
-- The audible peak lands 10–120 ms after the file starts, so start the clip on
-  the frame where the action happens. `npx hyperframes audio <file> --json`
-  reports the peak and loudness of any file you add.
-- The files peak at −6 dBFS and sit near −17 dB RMS; `data-volume` 0.5–0.8 is
-  the working range for one-shots.
+- Mount the sync point on the event: `data-start = eventTime − sync.at`.
+  The sync point is the part of the file that meets the action (its loudest
+  moment for hits/pops/clicks/whooshes; the very start for gestures like draws
+  and swipes). `assets/sfx/registry.json` gives each cue's `sync.at`.
+- For gestures whose length matches the file (`draw`, `swipe`, `whoosh-short`,
+  `whoosh-long`), start the file at the moment the action starts (`sync.at = 0`
+  or its move-peak placed at the move's fastest point).
+- `npx hyperframes audio <file> --json` reports each file's peak, loudness and
+  onset. Files peak at or under −3 dBTP and sit near −20 to −32 LUFS integrated;
+  `data-volume` 0.5–1.0 is the working range for one-shots.
+- When a cue's body overlaps a voiceover, lower it by its
+  `under_voiceover_db` from `registry.json` so the voice stays clear.
+
+### Reusable helpers
+
+`scripts/sfx.js` exports `cue(name, eventTime)`, which returns the `<audio>`
+attributes for any cue name mounted at an event time, using the registry's sync
+point so you never have to compute `data-start` by hand:
+
+```html
+<script type="module" src="scripts/sfx.js"></script>
+<script>
+  import { cue } from "scripts/sfx.js";
+  document.write(`<audio ${cue("pop", 2.3).attr()}></audio>`);
+</script>
+```
+
+`cue(name)` returns `{ attr, start, duration, syncAt, cue }`; `cue(name).attr()`
+renders the HTML attribute string including `id`, `src`, `data-start`,
+`data-duration`, `data-track-index="1"`, `data-volume` and `data-source-id`.
 
 ### When to use one
 
 - One cue per beat. Three in a 10 s scene is already busy.
 - Only on a visible action: a click, a cut, a card landing, a number finishing.
 - Rotate `tick` and `tick-soft` so repeated hits do not sound copied.
-- The template has no music bed. Add one in the edit and keep hits 3–6 dB over
-  it; `npm run check` reports `film_silent` until a bed exists.
+- No music bed ships with the template. Add one in the edit and keep hits
+  3–6 dB over it; `npm run check` reports `film_silent` until a bed exists.
 - No chimes, dings or melodic stingers. If you can hum the pitch, it does not
   belong in this system.
+
+---
+
+## 15. Sound design guidelines
+
+These rules make every AI-generated scene use the same sound design, so the
+channel's tutorials sound consistent across lessons and authors.
+
+### Available sound effects
+
+11 cues in `assets/sfx/`, each documented in `assets/sfx/registry.json`:
+
+| Sound | Trigger (animation event) | Sync rule | Volume |
+|---|---|---|---|
+| `click.wav` | cursor reaches its target; button/link pressed | `eventTime − 0.009` | 1.0 |
+| `tap.wav` | touchscreen tap target pressed | `eventTime − 0.009` | 1.0 |
+| `toggle.wav` | toggle/switch flips | `eventTime − 0.031` | 1.0 |
+| `pop.wav` | `scale-in` lands; chip/badge/icon reaches full size | `eventTime − 0.011` | 1.0 |
+| `tick.wav` | each list item / text line appears; highlight steps | `eventTime − 0.008` | 1.0 |
+| `tick-soft.wav` | secondary labels appear; rotate with `tick` | `eventTime − 0.007` | 1.0 |
+| `swipe.wav` | card/tab swipe begins; `slide-left`/`slide-right` starts | file start at action start | 1.0 |
+| `thud.wav` | card/panel/window lands and settles | `eventTime − 0.013` | 0.9 |
+| `draw.wav` | `draw` / `grow-x` starts | file start at action start | 1.0 |
+| `whoosh-short.wav` | scene cut; panel slides in | `eventTime − 0.229` | 1.0 |
+| `whoosh-long.wav` | large panel/map slides; long transition | `eventTime − 0.438` | 0.8 |
+
+### When to use each sound
+
+- **UI interactions:** `click` (mouse), `tap` (touch), `toggle` (switch),
+  `pop` (appearing chip/badge), `tick`/`tick-soft` (stepping highlight).
+- **Motion:** `swipe` (a card or finger moving across glass), `whoosh-short`
+  (a panel sliding in or a scene cut), `whoosh-long` (a large panel/map or
+  long transition).
+- **Weight:** `thud` (a card, panel or window landing), `pop` (something
+  reaching full size).
+- **Drawing:** `draw` (a line, connector, arrow or chart path being drawn).
+
+Only `draw` and `swipe` start at the action's first frame (`sync.at = 0`).
+Everything else starts at `eventTime − sync.at` so its sync point lands on the
+event. Use `scripts/sfx.js` `cue(name, eventTime)` to compute `data-start`
+automatically.
+
+### Animation events that should trigger each effect
+
+- `data-anim="draw"` starts → `draw.wav` (volume 1.0, overlaps voiceover by −1 dB)
+- `data-anim="scale-in"` lands → `pop.wav`
+- `data-anim="fade-up"` lands on a chip or badge → `pop.wav`
+- cursor animation reaches target / button pressed → `click.wav`
+- touchscreen target pressed / step becomes active → `tap.wav`
+- toggle flips / settings row activates → `toggle.wav`
+- `slide-left`/`slide-right` starts → `swipe.wav`
+- card/panel finishes `fade-up` / window lands → `thud.wav`
+- each list item or text line appears / highlight steps → `tick.wav`, rotated
+  with `tick-soft.wav`
+- large panel/map slides / long transition → `whoosh-long.wav` (0.8)
+- scene cut / panel slides in / card crosses frame → `whoosh-short.wav`
+
+### Sound synchronization rules
+
+1. `data-start = eventTime − sync.at` — the sync point meets the event. Read
+   `sync.at` from `assets/sfx/registry.json`, never guess it.
+2. For `draw`/`swipe`/`whoosh-*`, the file runs with the action: start it at
+   the action's first frame (`sync.at = 0`) or place its move-peak at the
+   move's fastest point (about a quarter into an ease-out, three quarters into
+   an ease-in).
+3. A whoosh that suits the move's length dies away just before the landing,
+   leaving the landing clear for `thud` or `pop`.
+4. Cue durations are fixed; `data-duration` must equal the file's duration from
+   `registry.json`. Do not stretch a cue with `data-playback-rate` beyond its
+   `adapt.rate` range (recorded in `registry.json`; changes pitch with rate).
+5. Trims need a short fade (10–50 ms) to avoid clicks; files start and end on
+   silence already.
+
+### Volume and mixing guidelines
+
+- `data-volume = 1` is 0 dB, played as shipped. The kit is loudness-matched as
+  a set; do not change levels for consistency between cues.
+- Recommended volumes: 1.0 for every cue except `thud` (0.9) and
+  `whoosh-long` (0.8).
+- Where a cue's body overlaps a voiceover, lower it by its
+  `under_voiceover_db` from `registry.json` (typically −1 to −3 dB) so the
+  voice stays clear.
+- Effects live on `data-track-index="1"`; picture stays on track 0.
+- One cue per beat; three cues in a 10 s scene is already busy.
+- No music bed ships with the template. Add one in the edit and keep hits
+  3–6 dB over it. `npm run check` reports `film_silent` until a bed exists.
+
+### How to introduce additional sound effects
+
+1. Pick a sound from the SFX Kit (or another CC0 source) and copy only that
+   file into `assets/sfx/` with its final project filename.
+2. Add a row to `assets/sfx/registry.json`: source id/source file/source URL,
+   duration, channels, sync point, timing, levels, `under_voiceover_db`,
+   recommended volume, use/avoid, trigger, animation events and sha256.
+3. Add a row to the table in §14 and a row to this section's table.
+4. Verify with `npx hyperframes audio assets/sfx/<file>.wav --json` and confirm
+   the sha256 matches `sounds.json` in the SFX Kit source.
+
+### Rules against excessive or repetitive sound effects
+
+- **One cue per beat.** Do not layer sounds on every element.
+- **Only on visible actions.** No sound for a static card, a hover that goes
+  unnoticed, or decoration that does not move.
+- **Rotate `tick` and `tick-soft`** so repeated hits do not sound copied.
+- **No music, chimes, dings or melodic stingers.** If you can hum the pitch,
+  it does not belong in this system.
+- **No "whoosh" on every entrance.** Reserve `whoosh-short`/`whoosh-long` for
+  real transitions and large moves; small UI moves use `tick`/`pop`.
+- **No looping cues.** `draw`/`swipe`/`whoosh` run once with their action.
+  Never loop a sound effect.
+- **Keep it quiet.** Calm, precise, practical — match the brand voice. A senior
+  operator explaining, not a hype reel.
