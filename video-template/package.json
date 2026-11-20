@@ -5,12 +5,12 @@
   "type": "module",
   "description": "Reusable HyperFrames design system and scene templates for Learn Shopify Today tutorials",
   "scripts": {
-    "dev": "npx --yes hyperframes@0.9.70 preview",
-    "preview": "npx --yes hyperframes@0.9.70 preview",
-    "lint": "npx --yes hyperframes@0.9.70 lint --verbose",
-    "check": "npx --yes hyperframes@0.9.70 check --at-transitions",
-    "snapshot": "npx --yes hyperframes@0.9.70 snapshot --review",
-    "render": "npx --yes hyperframes@0.9.70 render",
+    "dev": "hyperframes preview",
+    "preview": "hyperframes preview",
+    "lint": "hyperframes lint --verbose",
+    "check": "hyperframes check --at-transitions",
+    "snapshot": "hyperframes snapshot --review",
+    "render": "hyperframes render",
     "audit": "node scripts/audit-design.mjs"
   }
 }
